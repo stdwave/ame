@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" type="image/x-icon" href="fig/favicon.ico">	
+	<title>Automation</title>
+	<link rel="stylesheet" type="text/css" href="css/man.css" media="all">
+	<script type="text/javascript" src="js/template.js"></script>
+</head>
+<body>
+	<script type="text/javascript">topmenu();</script>
+
+	<h1>Automation</h1>
+	<p>This application supports the function "Automation."
+	This page describes how to use automation in this application.
+	The following list consists of the contents in this page.
+	<ul>
+	<li><a href="#am-type">Automation type</a></li>
+	<li><a href="#howto-recam">How to record for automation</a></li>
+	<li><a href="#howto-playam">How to play for automation</a></li>
+	<li><a href="#disable-am">How to disable record or play for automation</a></li>
+	<li><a href="#howto-edit">How to edit automation data in Track</a></li>
+	</ul>
+	</p>
+
+	<h2 id="am-type">Automation type</h2>
+	<p>The following table shows the type of automation supported this application.
+	According to the table, "Operation" means the mouse operation for each item in "Type" and
+	"Location" means the location to operate each item in "Type" respectively. 
+	</p>
+	<p>
+	Some items colored blue in the table are linked other pages "Introduction" and "Key/Mouse." 
+	Clicking each items moves the linked page and displays the corresponding content.
+	</p>
+	<table class="tabAM">
+		<tr><th>Type</th><th>Operation</th><th>Location</th></tr>
+		<tr><td><a href="key-mouse.html#insp-pangain">Volume</a></td><td rowspan="2">Drag & drop or click each slide-bar in <a href="key-mouse.html#insp-pangain">Inspector</a>, <a href="key-mouse.html#mixer-pangain">Mixer</a>, <a href="key-mouse.html#fx-pangain">Effect</a> or an icon in <a href="key-mouse.html#mixer-posmix">Position mixer</a>.</td><td rowspan="2"><a href="intro.html#inspector">Inspector</a>, <a href="intro.html#mixer">Mixer</a>, <a href="intro.html#effect">Effect</a>, and <a href="intro.html#iconpos">Icon position</td></tr>
+		<tr><td><a href="key-mouse.html#insp-pangain">Pan</td></tr>
+		<tr><td><a href="key-mouse.html#eq-sw">EQ SW</a></td><td rowspan="5">Click a check-box.</td><td rowspan="19"><a href="intro.html#eq">EQ</a></td></tr>
+		<tr><td><a href="key-mouse.html#eq-filtno">Filter No.1 SW</a></td></tr>
+		<tr><td><a href="key-mouse.html#eq-filtno">Filter No.2 SW</a></td></td></tr>
+		<tr><td><a href="key-mouse.html#eq-filtno">Filter No.3 SW</a></td></tr>
+		<tr><td><a href="key-mouse.html#eq-filtno">Filter No.4 SW</a></td></tr>
+		<tr><td><a href="key-mouse.html#eq-filttype">Filter No.1 Type</a></td><td rowspan="2">Click or drag and drop a selector.</td></tr>
+		<tr><td><a href="key-mouse.html#eq-filttype">Filter No.4 Type</a></td></tr>
+		<tr><td><a href="key-mouse.html#eq-freq">Filter No.1 Freq</a></a></td><td rowspan="8">Drag & drop each <a href="key-mouse.html#eq-freq">input-box</a> or <a href="key-mouse.html#eq-mark">marker</a> in the EQ spectrum.</td></tr>
+		<tr><td><a href="key-mouse.html#eq-freq">Filter No.2 Freq</a></td></tr>
+		<tr><td><a href="key-mouse.html#eq-freq">Filter No.3 Freq</a></td></tr>
+		<tr><td><a href="key-mouse.html#eq-freq">Filter No.4 Freq</a></td></tr>
+		<tr><td><a href="key-mouse.html#eq-gain">Filter No.1 Gain</a></td></tr>
+		<tr><td><a href="key-mouse.html#eq-gain">Filter No.2 Gain</a></td></tr>
+		<tr><td><a href="key-mouse.html#eq-gain">Filter No.3 Gain</a></td></tr>
+		<tr><td><a href="key-mouse.html#eq-gain">Filter No.4 Gain</a></td></tr>
+		<tr><td><a href="key-mouse.html#eq-q">Filter No.1 Q</a></td><td rowspan="4">Drag & drop each input-box.</td></tr>
+		<tr><td><a href="key-mouse.html#eq-q">Filter No.2 Q</a></td></tr>
+		<tr><td><a href="key-mouse.html#eq-q">Filter No.3 Q</a></td></tr>
+		<tr><td><a href="key-mouse.html#eq-q">Filter No.4 Q</a></td></tr>
+		<tr><td><a href="key-mouse.html#comp-sw">Compressor SW</a></td><td>Click a button.</td><td class="tdLastAM" rowspan="6"><a href="intro.html#comp">Compressor</td></tr>
+		<tr><td><a href="key-mouse.html#comp-threshold">Threshold</a></td><td>Drag & drop the <a href="key-mouse.html#comp-threshold">input-box</a> or <a href="key-mouse.html#comp-mark">marker</a> in the compressor graph.</td></tr>
+		<tr><td><a href="key-mouse.html#comp-knee">Knee</a></td><td rowspan="3">Drag & drop a input-box</td></tr>
+		<tr><td><a href="key-mouse.html#comp-attack">Attack</a></td></tr>
+		<tr><td><a href="key-mouse.html#comp-release">Release</a></td></tr>
+		<tr><td class="tdLastAM"><a href="key-mouse.html#comp-ratio">Ratio</a></td><td class="tdLastAM">Click a radio button.</td></tr>
+	</table>
+
+
+	<h2 id="howto-recam">How to record for automation</h2>
+	<p>
+	The automation shown the above table applies to each audio channel. 
+	To record operations for automation clicks the button "Rec" in Inspector or "R" in Track, Mixer, and Effect.
+	</p>
+	<p>
+	The following figures show respectively Inspector/Track, Mixer, and Effector after clicked the button "Rec" or "R" for the audio channel "t00_SynthBa."
+	According to the figures, each button colored red is available to record operations for automation.
+	</p>
+	<p>
+	Also, each buttons are interlocked because of the same audio channel(e.g. "t00_SynthBa") then clicking any button changes other buttons.
+	For example, clicking the button "Rec" in Inspector changes buttons "R" in Track, Mixer, and Effector. 
+	</p>
+	<img src="fig/automation/amrec-insp-tr.png" width="720px" height="459px" alt="Inpector and Track">
+	<img src="fig/automation/amrec-mixer.png" width="624px" height="233px" vspace="16" alt="Mixer"><br>
+	<img src="fig/automation/amrec-fx.png" width="768px" height="509px" alt="Effect"><br>
+	<p>
+	In playing audio, this application is recording each operation at play time. 
+	Also, this application overwrites each previous operation content in the case of operating at same play time.
+	</p>
+	<p>
+	This page describes four examples of recording operations as below.
+	</p>
+	<h3>Example 1: panning operation</h3>
+	<p>
+	The following figure shows an example of recording a panning operation.
+	According to the figure, drag & drop operates the slide-bar for "Pan" in Inspector. 
+	</p>
+	<img src="fig/automation/amrec-ex-panrec.png" width="767px" height="436px" alt="example of automation rec for pan">
+
+	<h3>Example 2: panning & volume operation</h3>
+	</p>
+	The following figure shows an example of recording panning & volume operations.
+	According to the figure, drag & drop operates the icon in Icon position. 
+	</p>
+	<img src="fig/automation/amrec-ex-posmixrec.png" width="767px" height="556px" alt="example of automation rec from position mixer">
+
+	<h3>Example 3: frequency & gain operation</h3>
+	</p>
+	The following figure shows an example of recording frequency & gain operations.
+	According to the figure, drag & drop operates the marker in EQ spectrum. 
+	</p>
+	<img src="fig/automation/amrec-ex-filtmrk.png" width="768px" height="571px" alt="example of automation rec from EQ">
+
+	<h3>Example 4: threshold operation</h3>
+	</p>
+	The following figure shows an example of recording threshold operation.
+	According to the figure, drag & drop operates the input-box for "Threshold" in Compressor. 
+	</p>
+	<img src="fig/automation/amrec-ex-threshold.png" width="767px" height="572px" alt="example of automation rec for threshold">
+
+
+
+	<h2 id="howto-playam">How to play for automation</h2>
+	<p>
+	To play for automation clicks the button "Play" in Inspector or "P" in Track, Mixer, and Effector.
+	</p>
+	<p>
+	The following figures show respectively Inspector/Track, Mixer, and Effector 
+	after clicked the button "Play" or "P" for the audio channel "t00_SynthBa." 
+	According to the figures, each button colored blue is available to play for automation.
+	</p>
+	<p>
+	Also, each buttons are interlocked because of the same audio channel(e.g. "t00_SynthBa") then
+	clicking any button change other buttons. 
+	For Example, clicking the button "Play" in Inspector changes button "P" in Track, Mixer, and Effector.
+	</p>
+	<img src="fig/automation/amplay-insp-tr.png" width="764px" height="572px" alt="Inspector and track">
+	<img src="fig/automation/amplay-mixer.png" width="765px" height="253px" vspace="16" alt="Mixer"><br>
+	<img src="fig/automation/amplay-fx.png" width="650px" height="482px" alt="Effect"><br>
+
+
+	<h2 id="disable-am">How to disable to record or play for automation</h2>
+	<p>
+	To disable to recored operations for automation clicks the red buttons "Rec" in Inspector or "R" in Track, Mixer, and Effector as shown in figure below.
+	</p>
+	<img src="fig/automation/amrec-disable.png" width="358px" height="126px" alt="Dispalbe to record for automation.">
+	<p>
+	Similarly, to disable to play for automation clicks the blue button "Play" in Inspector or "P" in Track, Mixer, and Effector as shown in figure below.
+	</p>
+	<img src="fig/automation/amplay-disable.png" width="357px" height="124px" alt="Disable to play for automation.">
+
+
+	<h2 id="howto-edit">How to edit automation data in Track</h2>
+	<p>In this application, each track has a track lane to edit automation data.
+	The following figure shows a track lane to edit automation data for the channel "t00_SynthBa." 
+	According to the figure, to display the track lane clicks the button drawn a down-pointing triangle.
+	</p>
+	<img src="fig/automation/amedit-tracklane.png" width="656px" height="191px" alt="Track lane for automation">
+	<p>
+	The left of the track lane:"Track menu for automation" contains a selector, buttons, and input-boxes. 
+	The selector "TYPE" selects a type of automation shown in "<a href="#am-type">Automation type</a>." 
+	The buttons "+" or "-" respectively enlarges or reduces the track lane for vertical.
+	The buttons "Del", "Add", "Move", and "Edit" edit an automation datum with mouse operation respectively.
+	And, the input-boxes "Time" and "Value" change each value with drag & drop operation in "Edit."
+	Also, the track lane displays square markers as automation data if any. 
+	</p>
+	<p>
+	This page describes "Del", "Add", "Move", "Edit", cancel each modes, and shortcuts as below.
+	</p>
+
+	<h3>How to delete an automation datum in Track</h3>
+	<ol>
+	<li>Click the button "Del."</li>
+	<li>Select a maker with a mouse then the selected marker colors red as shown in figure below.<br>
+		<img src="fig/automation/amdel-slctmrk.png" width="511px" height="129px" alt="Select an automation datum."></li>
+	<li>Click the marker then delete the marker as shown in figure below.<br>
+		<img src="fig/automation/amdel-delmrk.png" width="508px" height="125px" alt="Delete an automation datum."></li>
+	</ol>
+	</p> 
+
+	<h3>How to add an automation datum in Track</h3>
+	<ol>
+	<li>Click the button "Add."</li>
+	<li>Move a blue maker with a mouse as shown in figure below.<br>
+		<img src="fig/automation/amadd-slctmrk.png" width="509px" height="125px" alt="Move a mouse cursor."></li>
+	<li>Click then add the marker as shown in figure below.<br>
+		<img src="fig/automation/amadd-addmrk.png" width="507px" height="125px" alt="Add an automation datum."></li>
+	</ol>
+
+	<h3>How to move an automation datum in Track</h3>
+	<ol>
+	<li>Click the button "Move."</li>
+	<li>Select a marker with a mouse then the selected marker colors green as shown in figure below.<br>
+		<img src="fig/automation/ammove-slctmrk.png" width="507px" height="125px" alt="Select an automation datum."></li>
+	<li>Drag and drop the marker then the marker moves as shown in figure below.<br>
+		<img src="fig/automation/ammove-movmrk.png" width="508px" height="123px" alt="Move an automation datum."></li>
+	</ol>
+
+	<h3>How to edit an automation datum in Track</h3>
+	<ol>
+	<li>Click the button "Edit."</li>
+	<li>Select a marker with a mouse then the selected marker colors orange as shown in figure below.<br>
+		<img src="fig/automation/amedit-slctmrk.png" width="507px" height="124px" alt="Select an automation datum."></li>
+	<li>Drag and drop the input-boxes for "Time" or "Value" then the marker moves as shown in figure below.<br>
+		<img src="fig/automation/amedit-dndval.png" width="508px" height="124px" alt="Drag and Drop the value of the automation datum."></li>
+	<li>Click the track lane anywhere to cancel the selected marker as shown in figure below.<br>
+		<img src="fig/automation/amedit-cncelmrk.png" width="508px" height="123px" alt="Cancel the selected marker."></li>
+	</ol>
+
+	<h3>How to cancel each mode</h3>
+	<p>
+	To cancel each mode "Del", "Add", "Move", and "Edit" clicks the colored button. For example, clicking the button "Add" colored blue cancels "Add" then the button colors white.
+	</p>
+
+
+	<h3>Mouse click with key(s)</h3>
+	<p>
+	In a track lane, this application supports five operations to change modes "Del", "Add", "Move", "Edit", and cancel each mode with click and key(s).
+	The operations are described <a href="key-mouse.html#trvw-clkalt">here</a>. 
+	</p>
+
+	<script type="text/javascript">footer();</script>
+</body>
+</html>

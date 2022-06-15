@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" type="image/x-icon" href="fig/favicon.ico">	
+	<title>Introduction</title>
+	<link rel="stylesheet" type="text/css" href="css/man.css" media="all">
+	<script type="text/javascript" src="js/template.js"></script>
+</head>
+<body>
+	<script type="text/javascript">topmenu();</script>
+
+	<h1>Introduction</h1>
+	<p>This demonstration site is an audio mixing application with <a href="https://developer.mozilla.org/ja/docs/Web/API/Web_Audio_API" target="_blank">Web Audio API</a>.
+	This application operates some basic functions for audio mixing as shown below.
+	<ul>
+	<li>panning(pan)</li>
+	<li>volume</li>
+	<li>EQ</li>
+	<li>compressor</li>
+	<li>automation</li>
+	</ul>
+	Also, the layout of this application is based on general Digital Audio Workstation to use above functions. 
+	The layout is as shown below.
+	<ul>
+	<li><a href="#transpose">Transpose</a></li>
+	<li><a href="#inspector">Inspector</a></li>
+	<li><a href="#track">Track</a></li>
+	<li><a href="#mixer">Mixer</a></li>
+	<li><a href="#effect">Effect</a></li>
+	</ul>
+	This page describes each layout. 
+	</p>
+
+
+	<h2 id="transpose">Transpose</h2>
+	<p>The following figure shows "Transpose." 
+	According to the figure, Transpose has three parts: "Play Time", "Repeat Time", and "Window Select."
+	</p>
+	<img src="fig/intro/transpose.png" width="767" height="57" alt="Transpose">
+
+	<h3>Play Time</h3>
+	<p>
+	A time(e.g. "<font color="orange">00:07:703</font>" from the above figrue) next a right-pointing triangle means "<font color="orange">play time</font>."
+	The time is changed automatically in playing audio. Also, this application can change the time with drag & drop operation for vertical at any time.
+	</p>
+	<p>
+	The buttons under "play time" control the time and to play/stop audio.
+	Each button from left to right is as follows:
+	<ul>
+	<li>Set play time to zero(00:00:000).</li>
+	<li>Play audio.</li>
+	<li>Stop audio.</li>
+	<li>Enable/disable to set play time at start position after stop audio.</li>
+	<li>Enable/disable repeat.</li>
+	</ul>
+	</p>
+
+	<h3>Repeat Time</h3>
+	<p>A time(e.g. "<font color="orange">00:00:000</font>" from the above figure) next a upper left triangle means "<font color="orange">repeat start time</font>" 
+	and a time(e.g. "<font color="orange">00:10:000</font>" from above the figure) next a upper right triangle menas "<font color="orange">repeat end time</font>." 
+	This application can change each time with drag & drop operation for vertical at any time.
+	</p>
+	<p>The buttons: "Intro", "A", "B", "C", and "Outro" set repeat start/end time quickly. 
+	The name of each button means a part of the demo song used this application.
+	</p>
+
+	<h3>Window Select</h3>
+	<p>The buttons:"Track", "Mixer", and "Effector" change a current window to operate audio mixing. 
+	This application has shortcut keys instead of clicking these buttons. 
+	</p>
+	<h4>Key/Mouse operations</h4>
+	<p>The operations about "Transpose" are <a href="key-mouse.html#transpose">here</a>.</p>
+
+
+	<h2 id="inspector">Inspector</h2>
+	<p>
+	<img src="fig/intro/inspector.png" width="101" height="464" alt="Inspector" align="right">
+	The right figure shows "Inspector." Inspector displays the parameters of an audio channel(e.g. "t00_SynthBa").
+	Inspector controls as follows:
+	<ul>
+	<li>Change Panning.</li>
+	<li>Set panning to center.</li>
+	<li>Change volume.</li>
+	<li>Enable/disable mute.</li>
+	<li>Enable/disable solo.</li>
+	<li>Enable/disable to record for automation.</li>
+	<li>Enable/disable to play for automation.</li>
+	<li>Change Effect window.</li>
+	</ul>
+	To change the audio channel in Inspector <a href="key-mouse.html#tr-icon">clicks an icon or a name</a> in Track.
+	<br clear="right">
+	</p>
+	<h4>Key/Mouse operations</h4>
+	<p>The operations about "Inspector" are <a href="key-mouse.html#inspector">here</a>.</p>
+
+
+	<h2 id="track">Track</h2>
+	<p>The following figure shows "Track." According to the figure, Track has "Time ruler", "Track lane", "Track menu", and so on.</p>
+	<img src="fig/intro/track.png" width="670" height="514" alt="Track">
+
+	<h3>Mute, Solo, auto scroll, and enlargement/reduction for time direction</h3>
+	<img src="fig/intro/ms-as-zh.png" width="268" height="40" alt="Mute, Solo, AutoScroll, enlargement, reduction" align="right">
+	<p>Clicking the button "Mute" disables mute of all audio channels when the button colors yellow.
+	Clicking the button "Solo" disables solo of all audio channels when the button colors green.</p>
+	<p>Clicking the button "auto scroll" scrolls "Time ruler" and all "Track lane" automatically when the button colors orange.</p>
+	<p>Also, clicking each button "+"/"-" respectively enlarges/reduces "Time ruler" and all "Track lane" for horizontal.
+	</p>
+	<h4>Key/Mouse operations</h4>
+	<p>The operations about "Track" are <a href="key-mouse.html#track">here</a>.</p>
+
+
+	<h3>Time ruler</h3>
+	<img src="fig/intro/timeruler.png" width="403" height="41" alt="Time ruler" align="right">
+	<p>The right figure shows "Time ruler." According to the figure, Time ruler has two triangular marks.</p>
+	<p>The upper left triangle and the upper right triangle respectively mean the position for "repeat start time" and "repeat end time."</p>
+	<p>Also, Time ruler displays a region(blue band) between "repeat start time" and "repeat end time" in <a href="key-mouse.html#tp-rpt">enabling repeat</a>.
+		The band colors blue when "repeat start time" is shorter than "repeat end time." </p>
+	<img src="fig/intro/timeruler-pinkband.png" width="202" height="42" alt="repeat region invalid" align="right">
+	<p>Meanwhile, the right figure shows an example when the region colors pink. 
+	According to the figure, the region colors pink when "repeat start time" is longer than "repeat end time." 
+	In this case, despite <a href="key-mouse.html#tp-rpt">enabling repeat</a>, this application doesn't repeat playback.
+	<br clear="right">
+	</p>
+	<h4>Key/Mouse operations</h4>
+	<p>The operations about "Time ruler" are <a href="key-mouse.html#timeruler">here</a>.</p>
+
+
+	<h3>Track lane</h3>
+	<p>
+	<img src="fig/intro/track-lane.png" width="241" height="60" alt="Track lane" align="right">
+	The right figure shows one of "Track lane." According to the figure, the wave form of each audio displays here.
+	<br clear="right">
+	</p>
+	<img src="fig/intro/am-track-lane.png" width="242" height="62" alt="Track lane for automation" align="right">
+	<p>
+	Also, the right figure shows one of "Track lane for automation." According to the figure, the data for automation display as squared markers here.
+	This application can edit automation data with mouse operation.
+	</p>
+	<h4>Key/Mouse operations</h4>
+	<p>The operations about "Track lane" are <a href="key-mouse.html#tr-menu-lane">here</a>. 
+	Also, the operations about "Track lane for automation" are <a href="key-mouse.html#tr-menu-lane-am">here</a>.</p>
+
+
+	<h3>Track menu</h3>
+	<p>
+	<img src="fig/intro/track-menu.png" width="265" height="60" alt="Track menu" align="right">
+	The right figure shows "Track menu." According to the figure, the menu contains an icon, a name of audio file(e.g. t00_SynthBa) and six buttons.
+	Each button from left to right is as follows:
+	<ul>
+	<li>Display/hidden a track menu and lane for automation.</li>
+	<li>Enable/disable mute.</li>
+	<li>Enable/disable solo.</li>
+	<li>Enable/disable to record for automation.</li>
+	<li>Enable/disable to play for automation.</li>
+	<li>Change Effect window.</li>
+	</ul>
+	</p>
+	<p>
+	<img src="fig/intro/am-track-menu.png" width="258" height="60" alt="Track menu for automation" align="right">
+	<p>Also, the right figure shows "Track menu for automation." According to the figure, the menu contains a selector, four input-boxes, and six buttons.</p>
+	<p>The selector "TYPE" selects the type of automation. Selecting a type of automation changes the display about the corresponding track lane for automation.
+	The four input-boxes "Time" and "Value" are used to edit an automation datum.</p>
+	<p>
+	Each button("+", "-", "Del", "Add", "Move", and "Edit") from counterclockwise is as follows:
+	<ul>
+	<li>Enlarge a track menu and lane for vertical.</li>
+	<li>Reduce a track menu and lane for vertical.</li>
+	<li>Enable/disable to delete an automation datum.</li>
+	<li>Enable/disable to add an automation datum.</li>
+	<li>Enable/disable to move an automation datum.</li>
+	<li>Enable/disable to edit an automation datum.</li>
+	</ul>
+	</p>
+	<h4>Key/Mouse operations</h4>
+	<p>The operations about "Track menu/lane" are <a href="key-mouse.html#tr-menu-lane">here</a>. 
+	Also, the operations about "Track menu/lane for automation" are <a href="key-mouse.html#tr-menu-lane-am">here</a>.</p>
+
+
+	<h2 id="mixer">Mixer</h2>
+	<p>
+	The following figure shows "Mixer." According to the figure, Mixer contains two type mixers.
+	One uses icons for audio. This application calls "Position Mixer" as mixing by using icons.
+	The other is general type. This application calls it "General mixer."
+	</p>
+	<img src="fig/intro/mixer.png" width="767" height="511" alt="Mixer">
+
+	<h3>ICON SELECT</h3>
+	<img src="fig/intro/icon-select.png" width="255" height="250" alt="ICON SELECT" align="right">
+	<p>
+	The right figure shows "ICON SELECT." According to the figure, "ICON SELECT" contains 18 check-boxes and seven buttons. 
+	</p>
+	<p>
+	Each check-box displays/hides the corresponding icon in the upper right area of Mixer. 
+	Also, the buttons select some check-boxes collectively.
+	each button is as follows:
+	<ul>
+	<li>Auto:select some check-boxes automatically at play time.</li>
+	<li>Rhythm:select check-boxes for rhythm.</li>
+	<li>On:select all check-boxes.</li>
+	<li>Off:cancel all check-boxes.</li>
+	<li>A:select the check-boxes for part A of the demo song.</li>
+	<li>B:select the check-boxes for part B of the demo song.</li>
+	<li>C:select the check-boxes for part C of the demo song.</li>
+	</ul>
+	</p>
+
+
+	<h3 id="iconpos">Icon position</h3>
+	<p>The following figure shows "Icon position." According to the figure, the position of icons means panning(horizontal) and volume(vertical) respectively.
+	The left/right of panning are corresponding "L"/"R" of Icon position and 
+	the <font color="orange">min</font>/<font color="orange">max</font> of volume are corresponding "<font color="orange">REAR</font>"/"<font color="orange">FRONT</font>" of Icon position respectively.
+	This is based on positions for musical instruments like orchestra.
+	</p>
+	<img src="fig/intro/pos-mixer.png" width="511" height="254" alt="Position mixer"><br>
+	<p>Each icon in Icon position can move with drag & drop operation.</p>
+
+	<h3>General mixer</h3>
+	<p>The following figure shows "General mixer." According to the figure, the layout is similar to general mixer.</p>
+	<img src="fig/intro/general-mixer.png" width="766" height="253" alt="General mixer">
+	<p>The mixer for audio channel(e.g. "t00_SynthBa", "t01_Kick", ..., and "t17_Seq3") controls as follows:
+	<ul>
+	<li>Change Panning.</li>
+	<li>Set panning to center.</li>
+	<li>Change Volume.</li>
+	<li>Enable/disable to record for automation.</li>
+	<li>Enable/disable to play for automation.</li>
+	<li>Change Effect window.</li>
+	<li>Select a check-box in ICON SELECT and display an icon in Icon position after clicked the corresponding icon.
+	</ul>
+	</p>
+	<p>Also, the mixer contains a channel for "<font color="orange">OUTPUT</font>." 
+	The channel outputs the mixed sounds for each audio channel. 
+	The mixer for "OUTPUT" channel controls as follows:
+	<ul>
+	<li>Change Panning.</li>
+	<li>Set panning to center.</li>
+	<li>Change Volume.</li>
+	<li>Change Effect window.</li>
+	</ul>
+	</p>
+	<h4>Key/Mouse operations</h4>
+	<p>The operations about "Mixer" are <a href="key-mouse.html#mixer">here</a>.</p>
+
+
+
+	<h2 id="effect">Effect</h2>
+	<p>The following figure shows "Effect." According to the figure, Effect contains "Ch. SELECT", "EQ", and "Compressor."</p>
+	<img src="fig/intro/effect.png" width="768" height="512" alt="Effect">
+
+	<h3>Ch. SELECT</h3>
+	<img src="fig/intro/ch-select.png" width="127" height="507" alt="Ch.SELECT" align="right">
+	<p>The right figure shows "Ch. SELECT." According to the figure, Ch. SELECT selects an audio or "<font color="orange">OUTPUT</font>" channel to operate EQ and Compressor.
+	Ch.SELECT contains a selector, two slide-bars, seven buttons, and three icons.</p>
+	<p>The selector "CURRENT" selects a channel to operate EQ and Compressor.</p>
+	<p>The slide-bars are as follows:
+	<ul>
+	<li>Change panning.</li>
+	<li>Change volume.</li>
+	</ul>
+	</p>
+	<p>The buttons(C, M, S, R, P) are as follows:
+	<ul>
+	<li>Set panning to center.</li>
+	<li>Enable/disable mute.</li>
+	<li>Enable/disable solo.</li>
+	<li>Enable/disable to record for automation.</li>
+	<li>Enable/disable to play for automation.</li>
+	</ul>
+	</p>
+	<p>The triangular buttons(left-pointed and right-pointed triangles) are as follows:
+	<ul>
+	<li>Set a previous channel as a new current channel.</li>
+	<li>Set a next channel as a new current channel.</li>
+	</ul>
+	</p>
+	<p>The icons("CURRENT", "PREVIOUS", and "NEXT") are as follow:
+	<ul>
+	<li>Display a current channel.</li>
+	<li>Display a previous channel as a current channel.</li>
+	<li>Display a next channel as a current channel.</li>
+	</ul>
+	Also, clicking icons "PREVIOUS"/"NEXT" respectively set a previous/next channel as a new current channel.
+	</p>
+	<h4>Key/Mouse operations</h4>
+	<p>The operations about "CH. SELECT" are <a href="key-mouse.html#effect">here</a>.</p>
+
+
+	<h3 id="eq">EQ</h3>
+	<p>The following figure shows "EQ." According to the figure, EQ contains a button, four check-boxes, a selector, three input-boxes and a graph.</p>
+	<img src="fig/intro/eq.png" width="641" height="257" alt="EQ">
+	<p>Clicking the button like "power button" enables/disables the EQ function alternately. This application calls the button "EQ SW."
+	Also, the button colors green/gray when the function enables/disable.</p>
+	<p>Clicking each check-box(Filter No.1,2,3, and 4) enables/disables each filter effect alternately and 
+	displays/hides the filter curve & marker in the graph. This application calls the graph "EQ spectrum."
+	Also, the filter parameters(frequency, Q, and Gain) set the corresponding input-boxes after checked the box.
+	</p>
+	<p>
+	Clicking the selector(Filter type) sets the filter type as follows:
+	<ul>
+	<li>Filter No.1:LowShelf, Peaking,</li>
+	<li>Filter No.2 & 3:Peaking,</li>
+	<li>Filter No.4:HighShelf, Peaking.</li>
+	</ul>
+	</p>
+	<p>
+	Operating with drag & drop for vertical on each input-boxes(Frequency, Q, and Gain) can change each value respectively.
+	</p>
+	Clicking a marker in EQ spectrum sets the corresponding parameters to input-boxes and 
+	operating the marker with drag & drop  changes the value of frequency and gain in each input-box automatically.
+	<p>
+	<h4>Key/Mouse operations</h4>
+	<p>The operations about "EQ" are <a href="key-mouse.html#eq">here</a>.</p>
+
+
+	<h3 id="comp">Compressor</h3>
+	<p>The following figure shows "Compressor." According to the figure, Compressor contains a button, four input-boxes, four radio-buttons, and a graph.</p>
+	<img src="fig/intro/compressor.png" width="408" height="257" alt="Compressor">
+	<p>Clicking the button like "power button" enables/disables the compressor function alternately.
+	This application calls the button "Compressor SW." Also, the button colors green/gray when the function enables/disable.</p>
+	<p>
+	Operating with drag & drop for vertical on each input-boxes(Threshold, Knee, Attack, and Release) can change each value respectively.
+	</p>
+	<p>
+	Clicking each radio-button changes the value of ratio. 
+	</p>
+	<p>
+	Operating the marker with drag & drop in the graph changes the value of threshold in the corresponding input-box automatically.
+	</p>
+	<h4>Key/Mouse operations</h4>
+	<p>The operations about "Compressor" are <a href="key-mouse.html#comp">here</a>.</p>
+
+
+	<h3>FX Diagram</h3>
+	<img src="fig/intro/fx-diagram.png" width="233" height="253" alt="FX diagram" align="right">
+	<p>The right figure shows "FX Diagram." According to the figure, FX diagram shows the route of sound for the audio channel "CURRENT" assigned in Ch.SELECT.</p>
+	<p>"IN" means dry sound and "OUT" means wet/dry(bypassed all effects) sound.</p>
+	<p>The route from "IN" respectively passes/bypasses "EQ - Filters" when EQ SW colors green/gray.
+	In the case of passing "EQ - Filters", the route passes each filter shown as an icon in FX Diagram.</p>
+	<p>Each icon shows a current filter type and respectively displays or hides when the corresponding check-box in EQ is checked or not.</p>
+	<p>Also, the route passed/bypassed "EQ - Filters" respectively passes/bypasses "Compressor" when Compressor SW colors green/gray.</p>
+
+
+
+	<script type="text/javascript">footer();</script>
+</body>
+</html>

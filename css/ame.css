@@ -1,0 +1,2045 @@
+@charset "UTF-8";
+
+html, body{
+	height: 632px;
+	width:  768px;
+	font-family: "メイリオ", sans-serif;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+}
+/*******************************************************************************
+loading
+*******************************************************************************/
+#loading{
+	position: absolute;
+	top:0px;
+	left:0px;
+	width: 100%;
+	height: 100%;
+	opacity: 1.0;
+	z-index: 100;
+	background-color: white;
+}
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++****+++++
+Demo Title
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*****/
+#divTitle{
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 768px;
+	height: 80px;
+}
+#spnTitle{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 768px;
+	font-size: 20px;
+	text-align: center;
+	color: gray;
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Check Browser and OS
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#divChkBrowsOS{
+	position: relative;
+	left: 0px;
+	width: 768px;
+	height: 70px;
+	color: gray;
+	display: none;
+}
+.spnChkBrowsOS{
+	position: absolute;
+	width: 768px;
+	text-align: center;
+	color: gray;
+}
+#spnNoSprtBrowsOsMsg{
+	top: 0px;
+}
+#spnSprtBrowsOsMsg{
+	top: 40px;
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Supported Browsers and OSs
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#divSprtBrows{
+	position: relative;
+	height:80px;
+	width:768px;
+	display: none;
+}
+.spnSptBrows{
+	position: absolute;
+	width:768px;
+	color: gray;
+	text-align: center;
+}
+#spnFirefox{
+	top: 0px;
+}
+#spnChrome{
+	top: 30px;
+}
+#spnSafari{
+	top: 60px;
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Loading Sequence
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#divLoadSeq{
+	position: relative;
+	height: 200px;
+	width: 768px;
+	display: none;
+}
+#imgLoading{
+	position: absolute;
+	/*top: 128px;*/
+	left: 352px;
+}
+#spnLoading{
+	position: absolute;
+	top: 80px;
+	left: 0px;
+	width: 768px;
+	color: gray;
+	text-align: center;
+}
+#progLoading{
+	position: absolute;
+	top: 120px;
+	left: 256px;
+	width: 256px;
+	font-size: 0.6em;
+	background: white;
+	border: 1px solid gray;
+}
+#progLoading::-moz-progress-bar{
+	height: 10px;
+	background: #0048B0;
+}
+#progLoading::-webkit-progress-bar{
+	background: white;
+}
+#progLoading::-webkit-progress-value{
+	background: #0048B0;
+}
+#spnPercLoading{
+	position: absolute;
+	width:768px;
+	top: 140px;
+	left: 0px;
+	color: gray;
+	text-align: center;
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Message to start 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#divStart{
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 768px;
+	height: 80px;
+}
+#spnStart{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 768px;
+	font-size: 16px;
+	text-align: center;
+	color: red;
+}
+
+
+/*******************************************************************************
+Transpose
+*******************************************************************************/
+#transpose{
+	position: relative;
+	background-color: gray;
+	top: 0px;
+	width: 768px;
+	height: 60px;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Played time
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#divPlayedTime{
+	position: absolute;
+	left: 20px;
+	width: 170px;
+	height: 30px;
+}
+#cvsPlayMrk{
+	position: absolute;
+	top: 7px;
+	left: 3px;
+}
+.spnPlayedTime, .cvsPlayedTime{
+	position: absolute;
+	top: 5px;
+}
+.spnPlayedTime{
+	height: 19px;
+	line-height: 19px;
+	text-align: center;
+	font-size: 12px;
+	z-index: 0;
+}
+.cvsPlayedTime{
+	height: 19px;
+	z-index: 1;
+}
+#spnMin,#spnSec,#spnMsec{
+	border-radius: 3px;
+	background-color: white;
+}
+#spnSegMS,#spnSegSms{
+	color: white;
+	text-align: center;
+	width: 10px;
+}
+#spnMin, #cvsMin{
+	left: 23px;
+	width: 35px;
+}
+#spnSegMS{
+	left: 60px;
+}
+#spnSec, #cvsSec{
+	left: 71px;
+	width: 35px;
+}
+#spnSegSms{
+	left: 108px;
+}
+#spnMsec, #cvsMsec{
+	left: 119px;
+	width: 45px;
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Playback button
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#divPlayBack{
+	position: absolute;
+	top: 31px;
+	left: 20px;
+	width: 215px;
+	height: 30px;
+}
+.cvsPlayBack{
+	position: absolute;
+	top: 5px;
+	border-style: none;
+	border-radius: 3px;
+	background-color: white;
+}
+#cvsPbZero{
+	left: 0px;
+}
+#cvsPbPlay{
+	left: 35px;
+}
+#cvsPbStop{
+	left: 70px;
+}
+#cvsPbReturn{
+	left: 105px;
+}
+#cvsPbRepeat{
+	left: 140px;
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Repeat Start Time
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#divRptStartTime{
+	position: absolute;
+	top: 0px;
+	left: 220px;
+	width:180px;
+	height: 30px;
+}
+#cvsRptStartMark{
+	position: absolute;
+	top:    7px;
+	left:   3px;
+}
+.spnRptStartTime, .cvsRptStartTime{
+	position: absolute;
+	top: 5px;
+}
+.spnRptStartTime{ 
+	height: 19px;
+	line-height: 19px;
+	text-align: center;
+	font-size: 12px;
+	z-index: 0;
+}
+.cvsRptStartTime{
+	height: 19px;
+	z-index: 1;
+}
+#spnRptStartMin, #spnRptStartSec, #spnRptStartMsec{
+	border-radius: 3px;
+	background-color: white;
+}
+#spnRptStartSegMS, #spnRptStartSegSms{
+	color: white;
+	width: 10px;
+}
+#spnRptStartMin, #cvsRptStartMin{
+	left: 23px;
+	width: 35px;
+}
+#spnRptStartSegMS{
+	left: 60px;
+}
+#spnRptStartSec, #cvsRptStartSec{
+	left: 71px;
+	width: 35px;
+}
+#spnRptStartSegSms{
+	left: 108px;
+}
+#spnRptStartMsec, #cvsRptStartMsec{
+	left: 119px;
+	width: 45px;
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Repeat End Time
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#divRptEndTime{
+	position: absolute;
+	top: 31px;
+	left: 220px;
+	width:180px;
+	height: 30px;
+}
+#cvsRptEndMark{
+	position: absolute;
+	top:  7px;
+	left: 3px;
+}
+.spnRptEndTime, .cvsRptEndTime{
+	position: absolute;
+	top: 5px;
+}
+.spnRptEndTime{
+	height: 19px;
+	line-height: 19px;
+	text-align: center;
+	font-size: 12px;
+	z-index: 0;
+}
+.cvsRptEndTime{
+	height: 19px;
+	z-index: 1;
+}
+#spnRptEndMin, #spnRptEndSec, #spnRptEndMsec{
+	border-radius: 3px;
+	background-color: white;
+}
+#spnRptEndSegMS, #spnRptEndSegSms{
+	color: white;
+	width: 10px;
+}
+#spnRptEndMin, #cvsRptEndMin{
+	left: 23px;
+	width: 35px;
+}
+#spnRptEndSegMS{
+	left: 60px;
+}
+#spnRptEndSec, #cvsRptEndSec{
+	left: 71px;
+	width: 35px;
+}
+#spnRptEndSegSms{
+	left: 108px;
+}
+#spnRptEndMsec, #cvsRptEndMsec{
+	left: 119px;
+	width: 45px;
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Direct Repeat Area
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#divDirctRptArea{
+	position: absolute;
+	top: 0px;
+	width: 130px;
+	left: 400px;
+	height: 60px;
+}
+.btnRptTp{
+	position: absolute;
+	height: 19px;
+	font-size: 12px;
+	text-align: center;
+	border-style: none;
+	border-radius: 3px;
+	background-color: white;
+}
+#btnIntro, #btnOutro{
+	top: 5px;
+	width: 56px;
+}
+#btnIntro{
+	left: 3px;
+}
+#btnOutro{
+	left: 65px;
+}
+#btnA, #btnB, #btnC{
+	top: 36px;
+	width: 35px;
+}
+#btnA{
+	left: 3px;
+}
+#btnB{
+	left: 45px;
+}
+#btnC{
+	left: 87px;
+}
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++****+++++++++++++++++++++
+Display Mode
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++****+++++++++++++++*/
+#divDispMode{
+	position: absolute;
+	top: 0px;
+	left:550px;
+	width: 199px;
+	height: 60px;
+}
+#spnDispMode{
+	position: absolute;
+	top: 5px;
+	height: 19px;
+	line-height: 19px;
+	width: 199px;
+	text-align: center;
+	font-size: 12px;
+	color: white;
+}
+.btnDispMode{
+	position: absolute;
+	top: 30px;
+	width: 60px;
+	height: 20px;
+	text-align: center;
+	font-size: 12px;
+	border-style: none;
+	border-radius: 3px;
+	background-color: white;
+}
+#btnTrDispMode{
+	left: 3px;
+}
+#btnMixDispMode{
+	left: 69px;
+}
+#btnFxDispMode{
+	left: 135px;
+}
+
+
+/*******************************************************************************
+Inspector
+*******************************************************************************/
+#divInspector{
+	position: absolute;
+	top: 40px;
+	left: 0px;
+	height: 457px;
+	width: 100px;
+	background-color: gray;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+}
+.btnInspct{
+	position: absolute;
+	text-align: center;
+	font-size: 12px;
+	width: 55px;
+	left:24px;
+	border-style: none;
+	border-radius: 3px;
+	background-color: white;
+	outline: none;
+}
+.spnTagInspct{
+	position: absolute;
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+	color: white;
+	text-align: center;
+}
+/*Pan*/
+#spnPanTagInspct{
+	top: 0px;
+	left: 0px;
+	width: 100px;
+}
+#rngPanInspct{
+	position: absolute;
+	top: 16px;
+	left: 0px;
+	width: 84px;
+}
+#spnLTagInspct, #spnRTagInspct{
+	top: 38px;
+}
+#spnLTagInspct{
+	left:7px;
+}
+#spnRTagInspct{
+	left:88px;
+}
+#btnCenterInspct{
+	top: 43px;
+}
+/*Gain*/
+#spnGainTagInspct{
+	top: 66px;
+	left: 0px;
+	width: 100px;
+}
+#rngGainInspct{
+	position: absolute;
+	top:   138px;
+	left:  0px;
+	width: 113px;
+	transform: rotate(-90deg);
+}
+#spnMinTagInspct, #spnMaxTagInspct{
+	left:   29px;
+	height: 20px;
+}
+#spnMaxTagInspct{
+	top:90px;
+}
+#spnMinTagInspct{
+	top:185px;
+}
+/*Mute*/
+#btnMuteInspct{
+	top: 214px;
+}
+/*Solo*/
+#btnSoloInspct{
+	top: 239px;
+}
+/*Automation*/
+#spnAmTagInspct{
+	top: 264px;
+	left: 0px;
+	width: 100px;
+}
+#btnRecAmInspct{
+	top: 285px;
+}
+#btnPlayAmInspct{
+	top: 310px;
+}
+/*Effect*/
+#spnFxTagInspct{
+	top: 333px;
+	left: 0px;
+	width: 100px;
+}
+#btnFxInspct{
+	top: 353px;
+}
+/*icon*/
+#imgIcnInspct{
+	position: absolute;
+	top: 380px;
+	left: 26px;
+	width: 50px;
+	height: 50px;
+	background-color: azure;
+	border-radius: 3px;
+}
+/*Tr.Name*/
+#spnTrTagInspct{
+	top: 437px;
+	left: 3px;
+	width: 96px;
+	background-color: azure;
+	color: black;
+}
+
+
+/*******************************************************************************
+Track
+*******************************************************************************/
+#track{
+	position: relative;
+	height: 512px;
+	width:	768px;
+	background-color: gray;
+}
+/*All Table*/
+#tabTimeRuler, #tabTrCh, #tabTrView{
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Time Ruler
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#divTimeRuler{
+	position: absolute;
+	overflow: hidden;
+	top:   0px;
+	left:  361px;
+	width: 393px;
+	height:40px;
+}
+#cvsTimeRuler{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 0;
+}
+#cvsRepeatMarkerL, #cvsRepeatMarkerR{
+	position: absolute;
+	top: 0px;
+	z-index: 2;
+}
+#cvsRepeatMarkerL{
+	left: 50px;
+}
+#cvsRepeatMarkerR{
+	left: 100px;
+}
+#cvsRepeatRegion{
+	position: absolute;
+	top: 0px;
+	left: 100px;
+	z-index: 1;
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Track Ch
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#divTrCh{
+	position: absolute;
+	overflow: hidden;
+	top:   40px;
+	left:  100px;
+	width: 260px;
+	height:457px;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+}
+/* <td> for Trach Ch ---------------------------------------------------------*/
+.tdTrCh{
+	position: relative;
+	width: 269px;
+	height: 60px;
+}
+/* Icon */
+.imgTrCh{
+	position: absolute;
+	top:     1px;
+	left:    3px;
+	width:  50px;
+	height: 50px;
+	border: 2px white solid;
+	border-radius: 3px;
+}
+/* Track Name */
+.tagTrCh{
+	position: absolute;
+	top: 2px;
+	left: 60px;
+	width: 195px; 
+	height: 20px;
+	line-height: 20px;
+	text-align: left;
+	font-size: 12px;
+	padding-left: 1px;
+	border: 1px ghostwhite solid;
+	border-radius: 1px;
+}
+/* Automation Tr show/hide */
+.cvsAmTrCh{
+	position: absolute;
+	top:  36px;
+	left: 60px;
+	border-style: none;
+	border-radius: 3px;
+	background-color: white;
+	/*outline: none;*/
+}
+.btnMuteTrCh, .btnSoloTrCh, .btnPlayAmTrCh, .btnRecAmTrCh, .btnEffectTrCh{
+	position:absolute;
+	top:  36px;
+	width:  28px;
+	height: 20px;
+	text-align: center;
+	border-style: none;
+	border-radius: 3px;
+	background-color: white;
+	outline: none;
+}
+/* Mute */
+.btnMuteTrCh{
+	left: 93px;
+}
+/* Solo */
+.btnSoloTrCh{
+	left:  127px;
+}
+/* Rec Automation */
+.btnRecAmTrCh{
+	left: 161px;
+}
+/* Play Automation */
+.btnPlayAmTrCh{
+	left: 195px;
+}
+/* effect */
+.btnEffectTrCh{
+	left: 230px;
+}
+/* <td> for Automation  ------------------------------------------------------*/
+.tdAmCh{
+	position: relative;
+	width:  269px;
+	height: 60px;
+	background-color: lightgray;
+}
+/* zoom up / zoom down */
+.btnAmZmUp, .btnAmZmDwn{
+	position: absolute;
+	left: 3px;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	border-style: none;
+	border-radius: 3px;
+	background-color: white;
+	outline: none;
+}
+.btnAmZmUp{
+	top:  3px;
+}
+.btnAmZmDwn{
+	top: 39px;
+}
+/* Automation Type */
+.spnAmTag{
+	position: absolute;
+	top:    3px;
+	left:   33px;
+	width: 30px;
+	height: 16px;
+	line-height: 16px;
+	text-align: left;
+	font-size: 10px;
+}
+.slctAmType{
+	position: absolute;
+	top:     2px;
+	left:   65px;
+	width: 120px;
+	height: 20px;
+	text-align: left;
+	font-size: 12px;
+}
+/* Automation Time/Value */
+.spnAmTimeTag, .spnAmValTag{
+	position: absolute;
+	top:         23px;
+	height:      16px;
+	line-height: 16px;
+	font-size:   10px;
+	text-align: center;
+}
+.spnAmMin, .spnAmSec, .spnAmMsec, .spnAmVal{
+	position: absolute;
+	top:         22px;
+	height:      16px;
+	line-height: 16px;
+	font-size:   10px;
+	border: solid 1px darkgray;
+	text-align: center;
+	background-color: white;
+	z-index: 0;
+}
+.cvsAmMin, .cvsAmSec, .cvsAmMsec, .cvsAmVal{
+	position: absolute;
+	top: 22px;
+	z-index: 1;
+}
+.spnAmMinSecTag, .spnAmSecMsecTag{
+	position: absolute;
+	top:         22px;
+	height:      17px;
+	line-height: 17px;
+	width:       10px;
+	font-size:   10px;
+	text-align: center;
+}
+.spnAmTimeTag{
+	left:  21px;
+	width: 25px;
+}
+.spnAmMin{
+	left:  47px;
+	width: 20px;
+}
+.cvsAmMin{
+	left:  47px;
+}
+.spnAmMinSecTag{
+	left:  70px;
+}
+.spnAmSec{
+	left:  81px;
+	width: 20px;
+}
+.cvsAmSec{
+	left:  81px;
+}
+.spnAmSecMsecTag{
+	left: 104px;
+}
+.spnAmMsec{
+	left: 115px;
+	width: 28px;
+}
+.cvsAmMsec{
+	left: 115px;
+}
+.spnAmValTag{
+	left: 148px;
+	width: 28px;
+}
+.spnAmVal{
+	left: 176px;
+	width: 55px;
+}
+.cvsAmVal{
+	left:  176px;
+}
+/* Automation Mode button */
+.btnAmDel, .btnAmAdd, .btnAmMove, .btnAmEdit{
+	position: absolute;
+	top:    42px;
+	width:  42px;
+	height: 17px;
+	text-align: center;
+	border-style: none;
+	border-radius: 3px;
+	background-color: white;
+	outline: none;
+}
+.btnAmDel{
+	left: 30px;
+}
+.btnAmAdd{
+	left: 77px;
+}
+.btnAmMove{
+	left:124px;
+}
+.btnAmEdit{
+	left:171px;
+}
+.spnAmValLbl{
+	position: absolute;
+	top:          3px;
+	left:       210px;
+	width:       50px;
+	height:      20px;
+	line-height: 20px;
+	font-size:   10px;
+	text-align: right;
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Track View
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#divTrView{
+	position: absolute;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	top: 	 40px;
+	left:  361px;
+	width: 393px;
+	height:457px;
+}
+#cvsPlayLine{
+	position: absolute;
+	top:     0px;
+	left:    0px;
+	height:434px;
+	width:   1px;
+	background-color: ghostwhite;
+}
+#divTrScrollX{
+	position: absolute;
+	top:   499px;
+	left:  361px;
+	width :393px;
+	height: 12px;
+	background-color: white;
+}
+#cvsTrScrollX{
+	position: absolute;
+	top: 1px;
+	border-style: none;
+	border-radius: 5px;
+	background-color: darkgray;
+}
+#divTrScrollY{
+	position: absolute;
+	top:    40px;
+	left:  755px;
+	width : 12px;
+	height:457px;
+	background-color: white;
+}
+#cvsTrScrollY{
+	position: absolute;
+	left: 1px;
+	border-style: none;
+	border-radius: 5px;
+	background-color: darkgray;
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+All Part Ch Mute / Solo Off
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#divAllPartChMuteSoloState{
+	position: absolute;
+	top:    10px;
+	left:  100px;
+	width: 100px;
+}
+#btnAllPartChMuteState, #btnAllPartChSoloState{
+	position:absolute;
+	top:    0px;
+	width: 40px;
+	height:20px;
+	vertical-align: middle;
+	text-align: center;
+	border: 0px solid;
+	border-radius: 3px;
+	background-color: white;
+}
+#btnAllPartChMuteState{
+	left: 3px;
+}
+#btnAllPartChSoloState{
+	left: 48px;
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Horizontal Zoom Up / Down
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#divZoomX{
+	position: absolute;
+	top: 	 10px;
+	left:	218px;
+	width:145px;
+}
+#btnAutoScrollX, #btnMagX, #btnRedX{
+	position:absolute;
+	background-color: white;
+	top:    0px;
+	height:20px;
+	vertical-align: middle;
+	text-align: center;
+	border: 0px solid;
+	border-radius: 3px;
+}
+#btnAutoScrollX{
+	left: 0px;
+}
+#btnMagX{
+	left: 111px;
+	width: 20px;
+}
+#btnRedX{
+	left: 84px;
+	width:20px;
+}
+
+
+/*******************************************************************************
+Mixer
+*******************************************************************************/
+#mixer{
+	position: relative;
+	width: 730px;
+	height:512px;
+	display: none;
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Position Mix Ch.select
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#divIconSelect{
+	position: absolute;
+	top:    0px;
+	left:   0px;
+	width:  256px;
+	height: 256px;
+	background-color: gray;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+}
+.spnIcnSlctTag{
+	position: absolute;
+	height:      19px;
+	line-height: 19px;
+	font-size:   12px;
+	color: white;
+}
+.btnIcnSelct{
+	position: absolute;
+	height:   19px;
+	font-size:12px;
+	outline: none;
+	border-style: none;
+	border-radius: 3px;
+	background-color: white;
+	outline: none;
+}
+.cbInst{
+	position: absolute;
+}
+.lblInst{
+	position: absolute;
+	font-size: 10px;
+	color: white;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+}
+
+/*Tag, All on / off ----------------------------------------------------------*/
+#spnIcnSelctTag, #btnIcnSelct0, #btnIcnSelct1{
+	top:  3px;
+}
+#spnIcnSelctTag{
+	left: 3px;
+}
+/* Auto */
+#btnIcnSelct0{
+	left: 100px;
+	width: 60px;
+}
+/* Rythm */
+#btnIcnSelct1{
+	left: 170px;
+	width: 60px;
+}
+/* All On/Off, Part A, B and C -----------------------------------------------*/
+#spnAllOnOffIcnTag, #btnIcnSelct2, #btnIcnSelct3, #spnPartIcnTag, #btnIcnSelct4, #btnIcnSelct5, #btnIcnSelct6{
+	top: 27px;
+}
+#spnAllOnOffIcnTag{
+	left: 3px;
+}
+/* All On */
+#btnIcnSelct2{
+	left: 22px;
+	width:35px;
+}
+/* All Off */
+#btnIcnSelct3{
+	left: 64px;
+	width:35px;
+}
+#spnPartIcnTag{
+	left: 112px;
+}
+/* Part A */
+#btnIcnSelct4{
+	left: 142px;
+	width: 28px;
+}
+/* Part B */
+#btnIcnSelct5{
+	left: 180px;
+	width: 28px;
+}
+/* Part C */
+#btnIcnSelct6{
+	left: 218px;
+	width: 28px;
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Position Mix
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#divPosMix{
+	position: absolute;
+	top:     0px;
+	left:  256px;
+	width: 512px;
+	height:256px;
+	background-color: azure;
+}
+#cvsPosMixArea{
+	position: absolute;
+	top: 	20px;
+	left: 20px;
+	z-index: 0;
+}
+#cvsPosMixGraph{
+	position: absolute;
+	top: 	   0px;
+	left:    0px;
+	width: 512px;
+	height:256px;
+	z-index: 1;
+	background-color: black;
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Part Ch.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#partCh{
+	top:   256px;
+	left:    0px;
+	height:256px;
+	width: 665px;
+	position: absolute;
+	overflow-x: scroll;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+}
+#tabConsole{
+	position: absolute;
+	table-layout: fixed;
+	width: 700px;
+}
+.mixCh{
+	position: relative;
+	background-color: gray;
+}
+.mixPan{
+	position: absolute;
+	top:   0px;
+	left:  0px;
+	width:83px
+}
+.mixGain{
+	position:absolute;
+	top:   78px;
+	left:  10px;
+	width:120px;
+	transform: rotate(-90deg);
+}
+.btnMixPanC, .mixMute, .mixSolo, .mixRecAM, .mixPlayAM, .mixEffect{
+	position: absolute;
+	left:   8px;
+	width: 40px;
+	height:18px;
+	border-style: none;
+	border-radius: 3px;
+	background-color: white;
+	outline: none;
+}
+.btnMixPanC{
+	top: 22px;
+}
+.mixMute{
+	top: 45px;
+}
+.mixSolo{
+	top: 68px;
+}
+.mixRecAM{
+	top: 91px;
+}
+.mixPlayAM{
+	top:114px;
+}
+.mixEffect{
+	top:137px;
+}
+.mixIcon{
+	position: absolute;
+	top:159px;
+	left:20px;
+	border: 2px white solid;
+	border-radius: 3px;
+}
+.mixTag{
+	position: absolute;
+	top:       216px;
+	left:        0px;
+	width:     102px;
+	height:     20px;
+	line-height:20px;
+	text-align: center;
+	font-size: 12px;
+}
+/*==============================================================================
+Output Ch
+==============================================================================*/
+#outputCh{
+	position: absolute;
+	top:    258px;
+	width:  100px;
+	height: 254px;
+	left:   668px;
+	background-color: gray;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+}
+#outputPan{
+	position: absolute;
+	top: 0px;
+	left:0px;
+	width: 83px;
+}
+#outputGain{
+	position: absolute;
+	top:   76px;
+	left:  10px;
+	width: 120px;
+	transform: rotate(-90deg);
+}
+.btnOutput{
+	position: absolute;
+	left:   6px;
+	height: 18px;
+	width:  40px;
+	border-style: none;
+	border-radius: 3px;
+	background-color: white;
+	outline: none;
+}
+#btnOutputPanC{
+	top: 22px;
+}
+#btnOutputMute{
+	top: 45px;
+}
+#btnOutputEffect{
+	top: 137px;
+}
+#outputIcon{
+	position: absolute;
+	top: 159px;
+	left: 20px;
+	width: 50px;
+	height: 50px;
+	background-color: azure;
+	border-radius: 3px;
+}
+#outputTag{
+	position: absolute;
+	top:       216px;
+	left:        0px;
+	width:     100px;
+	height:     38px;
+	line-height:40px;
+	text-align: center;
+	font-size: 12px;
+	vertical-align: middle;
+}
+
+
+/*******************************************************************************
+FX(Effect)
+*******************************************************************************/
+#FX{
+	position: relative;
+	height:512px;
+	width: 768px;
+	background-color: gray;
+	display: none;
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Part Ch / OUTPUT Select
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#divFxPartCh{
+	position: absolute;
+	height:512px;
+	width: 128px; 
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+}
+.spnCh{
+	position: absolute;
+	width:     128px;
+	height:     20px;
+	line-height:20px;
+	font-size:  12px;
+	text-align: center;
+	background-color: white;
+}
+.spnChTag{
+	position: absolute;
+	height:     20px;
+	line-height:20px;
+	font-size:  12px;
+	color: white;
+}
+#spnCurrChTag, #spnPrevChTag, #spnNextChTag{
+	width: 128px;
+	text-align: center;
+}
+.cvsCh{
+	position: absolute;
+	top: 246px;
+}
+.imgCh{
+	position: absolute;
+	left: 39px;
+	background-color: white;
+	border-radius: 3px;
+	font-size: 12px;
+}
+#spnSelectCh{
+	top: 5px;
+	left:3px;
+}
+#spnCurrChTag{
+	top:  25px;
+}
+#selectFxCh{
+	position: absolute;
+	top: 44px;
+	left: 2px;
+	width: 123px;
+}
+#rngPanFX{
+	position: absolute;
+	top:  70px;
+	left: 14px;
+	width: 83px
+}
+#rngGainFX{
+	position:absolute;
+	top:   145px;
+	left:  25px;
+	width: 120px;
+	transform: rotate(-90deg);
+}
+.btnFX{
+	position: absolute;
+	left: 20px;
+	width: 40px;
+	height: 18px;
+	border-style: none;
+	border-radius: 3px;
+	background-color: white;
+	outline: none;
+}
+#btnCenterFX{
+	top: 100px;
+}
+#btnMuteFX{
+	top: 124px;
+}
+#btnSoloFX{
+	top: 148px;
+}
+#btnRecAmFX{
+	top: 172px;
+}
+#btnPlayAmFX{
+	top: 196px;
+}
+#imgCurrCh{
+	top: 230px;
+}
+#cvsPrevCh{
+	left: 9px;
+}
+#cvsNextCh{
+	left: 99px;
+}
+#spnPrevChTag{
+	top: 295px;
+}
+#spnPrevCh{
+	top: 315px;
+}
+#imgPrevCh{
+	top: 340px;
+	border: 2px white solid;
+}
+#spnNextChTag{
+	top: 405px;
+}
+#spnNextCh{
+	top: 425px;
+}
+#imgNextCh{
+	top: 450px;
+	border: 2px white solid;
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Dialog(Routing)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#divDialog{
+	position: absolute;
+	top:   256px;
+	left:  536px;
+	width: 232px;
+	height:256px;
+	background-color: gray;
+	z-index: 0;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+}
+#cvsRtSwFig{
+	position: absolute;
+	top:     0px;
+	left:    0px;
+	z-index: 1;
+}
+#cvsRouting{
+	position: absolute;
+	top:     0px;
+	left:    0px;
+	z-index: 2;
+}
+#spnFxRtTag{
+	position: absolute;
+	top:         3px;
+	left:        3px;
+	height:     19px;
+	line-height:19px;
+	font-size:  12px;
+	z-index: 3;
+	color: white;
+}
+.spnFxTag{
+	position: absolute;
+	height:     19px;
+	line-height:19px;
+	font-size:  12px;
+	z-index: 3;
+	color: white;
+}
+#spnEqRtTag{
+	top:  30px;
+	left: 99px;
+	width:77px;
+}
+#spnCompRtTag{
+	top: 146px;
+	left: 71px;
+	width:84px;
+}
+.spnRtTag{
+	position: absolute;
+	height:     19px;
+	line-height:19px;
+	font-size:  12px;
+	z-index: 3;
+	color: white;
+}
+#spnInRtTag{
+	left: 2px;
+	top: 80px;
+}
+#spnOutRtTag{
+	left:198px;
+	top: 199px;
+}
+.spnRtItem{
+	position: absolute;
+	top:        78px;
+	width:      20px;
+	height:     15px;
+	line-height:15px;
+	font-size:  12px;
+	text-align: center;
+	z-index: 2;
+}
+#spnRtFilter0{
+	left: 66px;
+	color:rgb(200, 0, 0);
+}
+#spnRtFilter1{
+	left: 106px;
+	color:rgb(0, 120, 0);
+}
+#spnRtFilter2{
+	left: 146px;
+	color:blue;
+}
+#spnRtFilter3{
+	left: 186px;
+	color:orange;
+}
+.cvsFig{
+	position: absolute;
+	top: 55px;
+	background-color: white;
+	border: 1px gray solid;
+	border-radius: 3px;
+	z-index: 2;
+}
+#cvsFilterFig0{
+	left: 65px;
+}
+#cvsFilterFig1{
+	left:105px;
+}
+#cvsFilterFig2{
+	left:145px;
+}
+#cvsFilterFig3{
+	left:185px;
+}
+#cvsCompFig{
+	position: absolute;
+	top:  172px;
+	left: 100px;
+	background-color: white;
+	border: 1px gray solid;
+	border-radius: 3px;
+	z-index: 2;
+}
+
+
+/*******************************************************************************
+EQ
+*******************************************************************************/
+#EQ{
+	position: absolute;
+	left:  128px;
+	top:     0px;
+	height:256px;
+	width: 640px;
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+EQ parameter
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#divEqParam{
+	position: absolute;
+	top:       0px;
+	left:      0px;
+	height:  256px;
+	width:   128px;
+	font-size:12px;
+	background-color: lightgray;
+	z-index: 0;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+}
+/* EQ SW ---------------------------------------------------------------------*/
+#cvsEqSW{
+	position: absolute;
+	top:  5px;
+	left: 5px;
+	border-radius: 5px;
+}
+#spnEqName{
+	position: absolute;
+	top:        12px;
+	left:       38px;
+	width:      73px;
+	height:     19px;
+	line-height:19px;
+}
+/* Filter SW -----------------------------------------------------------------*/
+#spnTagEqNo, .lblEqNo{
+	position: absolute;
+	z-index: 0;
+}
+#spnTagEqNo{
+	top:        40px;
+	left:        5px;
+	width:      54px;
+	height:     19px;
+	line-height:19px;
+}
+.chkEq{
+	position: absolute;
+	top: 60px;
+	z-index: 0;
+}
+.lblEqNo{
+	top:        58px;
+	width:      10px;
+	height:     22px;
+	line-height:22px;
+	font-size: 14px;
+}
+#chkEq0{
+	left:	0px;
+}
+#lblEqNo0{
+	color: red;
+	left:	18px;
+}
+#chkEq1{
+	left:	29px;
+}
+#lblEqNo1{
+	color: green;
+	left:	49px;
+}
+#chkEq2{
+	left:	60px;
+}
+#lblEqNo2{
+	color: blue;
+	left:	79px;
+}
+#chkEq3{
+	left:90px;
+}
+#lblEqNo3{
+	color: orange;
+	left:110px;
+}
+/* Filter Type ---------------------------------------------------------------*/
+#spnTagEqType{
+	position: absolute;
+	top:  80px;
+	left: 5px;
+	z-index: 0;
+}
+#filterType{
+	position: absolute;
+	top:  100px;
+	left: 5px;
+	z-index: 0;
+}
+/* Filter Parameter Value ----------------------------------------------------*/
+.spnTagEq{
+	position: absolute;
+	left:        5px;
+	height:     19px;
+	line-height:19px;
+	z-index: 0;
+}
+.spnValEq{
+	position: absolute;
+	left:        5px;
+	height:     20px;
+	line-height:20px;
+	background-color: white;
+	border: solid 1px gray;
+	padding: 0px 1px;
+	text-align: right;
+	z-index: 0;
+}
+.draggabilly.cvsEq{
+	position: absolute;
+	left:    5px;
+	height: 20px;
+	z-index: 1;
+	cursor: default;	/*mouse cursor changed on an element*/
+}
+#spnTagEqFreq{
+	top: 121px;
+}
+#spnEqFreq, #cvsDragFreq{
+	top: 141px;
+}
+#spnEqFreq{
+	width: 45px;
+}
+#cvsDragFreq{
+	width: 50px;
+}
+#spnTagEqQ{
+	top: 164px;
+}
+#spnEqQ, #cvsDragQ{
+	top: 184px;
+}
+#spnEqQ{
+	width: 30px;
+}
+#cvsDragQ{
+	width: 35px;
+}
+#spnTagEqGain{
+	top: 207px;
+}
+#spnEqGain, #cvsDragGain{
+	top: 227px;
+}
+#spnEqGain{
+	width: 37px;
+}
+#cvsDragGain{
+	width: 42px;
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+EQ Spectrum
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#divGraph{
+	position: absolute;
+	top: 0px;
+	left: 128px;
+}
+/* the area for movable each marker */
+#markerArea{
+	position: absolute;
+	z-index: 0;
+	top:   5px;
+	left: 20px;
+}
+/* drawing area for semilog graph */
+#semiLogEq{
+	position: absolute;
+	z-index: 1;
+}
+/* in this file, spectrum doesn't draw */
+#eqSpectrum{
+	position: absolute;
+	z-index: 2;
+	top: 10px;
+	left: 25px;
+}
+#eqCurve0, #eqCurve1, #eqCurve2, #eqCurve3{
+	position: absolute;
+	top: 10px;
+	left: 25px;
+}
+.draggabilly.eq{
+	position: absolute;
+	z-index: 7;
+	border: 1px white solid;
+	border-radius: 10px;
+	width: 10px;
+	height: 10px;
+	cursor: move;	/* mouse cursor changed on an element */
+}
+#eqMarker0{
+	top:128px;
+	left:64px;
+	background-color: red;
+}
+#eqMarker1{
+	top: 128px;
+	left:128px;
+	background-color: lightgreen;
+}
+#eqMarker2{
+	top: 128px;
+	left:192px;
+	background-color: blue;
+}
+#eqMarker3{
+	top: 128px;
+	left:256px;
+	background-color: orange;
+}
+
+
+/*******************************************************************************
+Comp
+*******************************************************************************/
+#comp{
+	position: absolute;
+	top:   256px;
+	left:  128px;
+	width: 408px;
+	height:256px;
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Compressor Param
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#divCompParam{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 128px;
+	height: 256px;
+	background-color: lightgray;
+	font-size: 12px;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+}
+/* Compressore SW ------------------------------------------------------------*/
+#cvsCompSW{
+	position: absolute;
+	z-index: 0;
+	top:  5px;
+	left: 5px;
+	background-color: lightgray;
+	border-radius: 5px;
+}
+#spnCompName{
+	position: absolute;
+	top:       12px;
+	left:       38px;
+	width:      82px;
+	height:     19px;
+	line-height:19px;
+}
+/* Compressore Param ---------------------------------------------------------*/
+.compParamTag, .compParam{
+	position: absolute;
+	z-index: 0;
+}
+.compParamTag{
+	left:        5px;
+	height:     20px;
+	line-height:20px;
+}
+.compParam{
+	left: 70px;
+	height:     20px;
+	line-height:20px;
+	text-align: right;
+}
+#spnThreshold, #spnKnee, #spnAttack, #spnRelease{
+	background-color: white;
+	border: solid 1px gray;
+	padding: 0px 1px;
+}
+.compCvs{
+	left: 70px;
+	position: absolute;
+	height: 20px;
+	z-index: 1;
+}
+/* Threshold */
+#spnThresholdTag, #spnThreshold, #cvsThreshold{
+	top: 40px;
+}
+#spnThreshold{
+	width: 37px;
+}
+#cvsThreshold{
+	width: 42px;
+	/*background-color: red;*/
+}
+/* Knee */
+#spnKneeTag, #spnKnee, #cvsKnee{
+	top: 65px;
+}
+#spnKnee{
+	width: 30px;
+}
+#cvsKnee{
+	width: 35px;
+}
+/* Ratio */
+.radioRatio{
+	position: absolute;
+	left: 65px;
+	z-index: 0;
+}
+.lblValRatio{
+	position: absolute;
+	left:       87px;
+	width:      19px;
+	height:     19px;
+	line-height:19px;
+	font-size:  12px;
+	z-index: 0;
+}
+#spnRatioTag, #radioRatio0, #lblValRatio0{
+	top:90px;
+}
+#radioRatio1, #lblValRatio1{
+	top: 110px;
+}
+#radioRatio2, #lblValRatio2{
+	top: 130px;
+}
+#radioRatio3, #lblValRatio3{
+	top: 150px;
+}
+/* Attack */
+#spnAttackTag, #spnAttack, #cvsAttack{
+	top: 175px;
+}
+#spnAttack{
+	width: 32px;
+}
+#cvsAttack{
+	width: 37px;
+}
+/* Release */
+#spnReleaseTag, #spnRelease, #cvsRelease{
+	top: 200px;
+}
+#spnRelease{
+	width: 32px;
+}
+ #cvsRelease{
+	width: 37px;
+}		
+/* Reduction */
+#spnReductionTag, #spnReduction{
+	top: 225px;
+}
+#spnReduction{
+	width: 30px;
+}
+/*==============================================================================
+Compressor graph
+==============================================================================*/
+#divCompGraph{
+	position: absolute;
+	top:		0px;
+	left:		128px;
+	width:	256px;
+	height:	256px;
+}
+#cvsThresholdMrkArea{
+	position: absolute;
+	top: 13px;
+	left:21px;
+	z-index: 0;
+}
+#cvsCompGraph{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+}
+#cvsCompCurve{
+	position: absolute;
+	top: 18px;
+	left: 28px;
+	z-index: 2;
+}
+.draggabilly.comp{
+	position: absolute;
+	z-index: 3;
+	border: 1px white solid;
+	border-radius: 10px;
+	width:  10px;
+	height: 10px;
+	cursor: move;										/*mouse cursor changed on an element*/
+}
+#thresholdMarker{
+	top: 128px;
+	left: 128px;
+	background-color: orangered;
+}
+#ratioMarker{
+	top: 48px;
+	left: 238px;
+	background-color: blue;
+}
+/*==============================================================================
+Compressor reduction graph
+==============================================================================*/
+#divCompReduction{
+	position: absolute;
+	left:   384px;
+	top:      0px;
+	width:  24px;
+	height: 256px;
+	background-color: black;
+}
+#cvsCompReductGraph{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 1;
+}
+#cvsCompReduction{
+	position: absolute;
+	left: 4px;
+	top: 18px;
+	z-index: 0;
+}
+
+
+/*******************************************************************************
+Menu / Navigation
+*******************************************************************************/
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Menu
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#menu{
+	position: relative;
+	width: 768px;
+	height: 53px;
+	font-size: 12px;
+	padding-top: 7px;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	background-color: white;
+}
+#ulMenu{
+	width: 768px;
+	margin:0 auto;
+	padding: 0;
+}
+.liMenu{
+	display: block;
+	float: left;
+	width:15.6%;
+	height:24px;
+	line-height:24px;
+	margin: 3px;
+	padding: 0;
+	color: black;
+	text-align: center;
+	background-color: white;
+	border: 1px solid gray;
+	border-radius: 1px;
+}
+#menu a{
+	display: block;
+	text-decoration: none;
+}
+#spnQnaviMsg{
+	position: absolute;
+	top: 37px;
+	left: 0px;
+	width: 768px;
+	height: 16px;
+	line-height: 16px;
+	text-align: right;
+	color: gray;
+}
+/*copyright*/
+#spnCpyRight{
+	position: absolute;
+	top: 37px;
+	left: 0px;
+	height: 16px;
+	line-height: 16px;
+	color: black;
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Message
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#msg{
+	position: absolute;
+	top: 632px;
+	left: 0px;
+	width: 100px;
+	height: auto;
+	z-index: 50;
+	font-size: 12px;
+	background-color: white;
+	padding: 1px;
+	border-radius: 3px;
+	border: 1px solid orange;
+}

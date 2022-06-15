@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" type="image/x-icon" href="fig/favicon.ico">	
+	<link rel="stylesheet" type="text/css" href="css/man.css" media="all">
+	<title>Demo song</title>
+	<script type="text/javascript" src="js/template.js"></script>
+</head>
+<body>
+	<script type="text/javascript">topmenu();</script>
+
+	<h1>Demo song</h1>
+	<p>This application uses the original song by Y.Okubo. 
+	The song consists of 18 audio(mp3@128kbps) and 5 parts:"Intro", "A", "B", "C", and "Outro."
+	This page describes the configuration for each audio.</p>
+
+	<h2>The configuration for each audio</h2>
+	<p>
+	The following table is the configuration for each audio. According to the table, 
+	"All" contains all parts(Intro, A, B, C, and Outro) of the song.
+	Also, each song part uses the repeat region in Transpose and Track, and ICON SELECT in Mixer.
+	<table id="tabAudio">
+		<tr><th>Icon</th><th>Name</th><th>Song part</th></tr>
+		<tr><td><img id="img00" src="fig/t00_SynthBa.png" alt="t00_SynthBa"></td><td>t00_SynthBa</td><td rowspan="9">All</td></tr>
+		<tr><td><img id="img01" src="fig/t01_Kick.png" alt="t01_Kick"></td>      <td>t01_Kick</td></tr>
+		<tr><td><img id="img02" src="fig/t02_Snare.png" alt="t02_Snare"></td>    <td>t02_Snare</td></tr>
+		<tr><td><img id="img03" src="fig/t03_CloseHH.png" alt="t03_CloseHH"></td><td>t03_CloseHH</td></tr>
+		<tr><td><img id="img04" src="fig/t04_OpenHH.png" alt="t04_OpenHH"></td>  <td>t04_OpenHH</td></tr>
+		<tr><td><img id="img05" src="fig/t05_Crash.png" alt="t05_Crash"></td>    <td>t05_Crash</td></tr>
+		<tr><td><img id="img06" src="fig/t06_Splash.png" alt="t06_Splash"></td>  <td>t06_Splash</td></tr>
+		<tr><td><img id="img07" src="fig/t07_Claves.png" alt="t07_Claves"></td>  <td>t07_Claves</td></tr>
+		<tr><td><img id="img08" src="fig/t08_Pf.png" alt="t08_Pf"></td>          <td>t08_Pf</td></tr>
+		<tr><td><img id="img09" src="fig/t09_Melo.png" alt="t09_Melo"></td>      <td>t09_Melo</td><td rowspan="2">A</td></tr>
+		<tr><td><img id="img10" src="fig/t10_Pad1.png" alt="t10_Pad1"></td>      <td>t10_Pad1</td></tr>
+		<tr><td><img id="img11" src="fig/t11_Organ.png" alt="t11_Organ"></td>    <td>t11_Organ</td><td rowspan="3">B</td></tr>
+		<tr><td><img id="img12" src="fig/t12_Pad2.png" alt="t12_Pad2"></td>      <td>t12_Pad2</td></tr>
+		<tr><td><img id="img13" src="fig/t13_Seq2.png" alt="t13_Seq2"></td>      <td>t13_Seq2</td></tr>
+		<tr><td><img id="img14" src="fig/t14_Lead.png" alt="t14_Lead"></td>      <td>t14_Lead</td><td rowspan="4" class="tdLast">C</td></tr>
+		<tr><td><img id="img15" src="fig/t15_Bell.png" alt="t15_Bell"></td>      <td>t15_Bell</td></tr>
+		<tr><td><img id="img16" src="fig/t16_Str.png" alt="t16_Str"></td>        <td>t16_Str</td></tr>
+		<tr><td class="tdLast"><img id="img17" src="fig/t17_Seq3.png" alt="t17_Seq3"></td><td class="tdLast">t17_Seq3</td></tr>
+	</table>
+	</p>
+
+	<script type="text/javascript">footer();</script>
+</body>
+</html>

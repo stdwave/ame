@@ -1,0 +1,325 @@
+html, body{
+	width: 768px;
+	font-family: "メイリオ", sans-serif;
+}
+h1{
+	color: darkblue;
+	font-size: 24px;
+	border-left: 12px solid orange;
+	border-bottom: 2px solid orange;
+	padding-left: 3px;
+}
+h2{
+	font-size: 22px;
+	border-left: 10px solid darkblue;
+	border-bottom: 2px solid darkblue;
+	padding-left: 3px;
+}
+h3{
+	font-size: 20px;
+	border-left: 6px solid blue;
+	border-bottom: 2px solid blue;
+	padding-left: 3px;
+}
+h4{
+	font-size: 18px;
+	border-left: 3px solid gray;
+	border-bottom: 1px solid gray;
+	padding-left: 3px;
+}
+h5{
+	font-size: 16px;
+	border-left: 1px solid lightgray;
+	border-bottom: 1px solid lightgray;
+	padding-left: 3px;
+}
+a{
+	text-decoration: none;
+}
+
+
+
+/*******************************************************************************
+Menu
+*******************************************************************************/
+#menu{
+	position: relative;
+	width: 768px;
+	height: 32px;
+	font-size: 14px;
+	padding-top: 0px;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	/*border: 1px solid darkgray;*/
+	background-color: WhiteSmoke;
+}
+#ulMenu{
+	width: 768px;
+	margin:0 auto;
+	padding: 0;
+}
+.liMenu{
+	display: block;
+	float: left;
+	width: 18.95%;
+	height:24px;
+	line-height:24px;
+	margin: 3px;
+	padding: 0;
+	text-align: center;
+	background-color: white;
+	border: 1px solid gray;
+	border-radius: 3px;
+}
+
+#menu a{
+	display: block;
+}
+
+/*******************************************************************************
+footer
+*******************************************************************************/
+#footer{
+	position: relative;
+}
+#footer p{
+	width: 768px;
+	text-align: center;
+	color: white;
+	background-color: black;
+}
+
+
+/*******************************************************************************
+key / Mouse 
+*******************************************************************************/
+#tabShortcutKey{
+	border-collapse: collapse;
+	width: 512px;
+}
+#tabShortcutKey th{
+	padding: 3px;
+	text-align: center;
+	border-bottom: 4px solid darkblue;
+}
+#tabShortcutKey td{
+	padding: 3px;
+	border-bottom: 1px dashed #999999;
+}
+.thTdShortkey{
+	text-align: center;
+	width: 20%;
+}
+#tabShortcutKey td.tdLastKM{
+	border-bottom: 4px solid darkblue;
+}
+
+.p-rtb{
+	width:768px;
+	text-align: right;
+}
+
+/*==============================================================================
+Mouse 
+==============================================================================*/
+.tabMouse{
+	border-collapse: collapse;
+	width: 768px;
+}
+.tabMouse th{
+	padding: 3px;
+	text-align: center;
+	border-bottom: 4px solid darkblue;
+}
+.tabMouse td{
+	padding: 3px;
+	border-bottom: 1px dashed #999999;
+}
+.tabMouse td.tdLastMouse{
+	border-bottom: 4px solid darkblue;
+}
+
+
+/*******************************************************************************
+Automation
+*******************************************************************************/
+.tabAM{
+	border-collapse: collapse;
+	width: 768px;
+}
+.tabAM th{
+	padding: 3px;
+	width: 33%;
+	text-align: center;
+	border-bottom: 4px solid darkblue;
+}
+.tabAM td{
+	text-align: left;
+	padding: 3px;
+	width: 33%;
+	border-bottom: 1px dashed #999999;
+}
+.tabAM td.tdLastAM{
+	border-bottom: 4px solid darkblue;
+}
+
+
+/*******************************************************************************
+About Safari
+*******************************************************************************/
+.tabAboutSafari{
+	border-collapse: collapse;
+	width: 600px;
+}
+.tabAboutSafari th{
+	padding: 3px;
+	width: 33%;
+	text-align: center;
+	border-bottom: 4px solid darkblue;
+}
+.tabAboutSafari td{
+	text-align: center;
+	padding: 3px;
+	width: 33%;
+	border-bottom: 1px dashed #999999;
+}
+.tabAboutSafari td.tdLastAS{
+	border-bottom: 4px solid darkblue;
+}
+
+
+/*******************************************************************************
+Demo song
+*******************************************************************************/
+#tabAudio{
+	border-collapse: collapse;
+	width: 512px;
+}
+#tabAudio th{
+	padding: 3px;
+	width: 33%;
+	text-align: center;
+	border-bottom: 4px solid darkblue;
+}
+#tabAudio td{
+	text-align: center;
+	padding: 3px;
+	width: 33%;
+	border-bottom: 1px dashed #999999;
+}
+#tabAudio td.tdLast{
+	border-bottom: 4px solid darkblue;
+}
+
+
+#tabAudio img{
+	border-radius: 3px;
+}
+#img00{
+	background-color: #ffa07a;	/*LightSalmon*/
+}
+#img01{
+	background-color: #f08080;	/*LightCoral*/
+}
+#img02{
+	background-color: #ff8c00;	/*DarkOrange*/
+}
+#img03{
+	background-color: #ffffe0;	/*LightYellow*/
+}
+#img04{
+	background-color: #f0e68c;	/*Khaki*/
+}
+#img05{
+	background-color: #ffd700;	/*Gold*/
+}
+#img06{
+	background-color:	#98fb98;	/*PaleGreen*/
+}
+#img07{
+	background-color: #00fa9a; /*MediumSpringGreen*/
+}
+#img08{
+	background-color: #32cd32; /*LimeGreen*/
+}
+#img09{
+	background-color: #afeeee;	/*PaleTurquoise*/
+}
+#img10{
+	background-color: #00ffff;	/*aqua*/
+}
+#img11{
+	background-color: #87cefa;	/*LightSkyBlue*/
+}
+#img12{
+	background-color:	#fff0f5;	/*LavenderBlush*/
+}
+#img13{
+	background-color: #dda0dd;	/*Plum*/
+}
+#img14{
+	background-color: #ee82ee;	/*Violet*/
+}
+#img15{
+	background-color: #ffb6c1;	/*LightPink*/
+}
+#img16{
+	background-color: #ffc0cb;	/*Pink*/
+}
+#img17{
+	background-color: #ff69b4;	/*HotPink*/
+}
+#img18{
+	background-color: #f0ffff;	/*Azure for Master Out*/
+}
+
+
+/*******************************************************************************
+Message
+*******************************************************************************/
+#msg{
+	position:absolute;
+	top: 8px;
+	left: 8px;
+	width: 768px;
+	height:572px;
+	display: block;
+	z-index: 50;
+	background-color: azure;
+	border-radius: 3px;			/*for position check*/
+}
+#spnTtlMsg{
+	position: absolute;
+	top:    5px;
+	left:   5px;
+	width:700px;
+	height:18px;
+	line-height: 18px;
+	font-size: 16px;
+	text-align: center;
+}
+#btnClsMsg{
+	position: absolute;
+	top: 5px;
+	left: 700px;
+}
+#hrMsg{
+	position: absolute;
+	top: 20px;
+	left: 0px;
+	width: 768px;
+	color: blue;
+}
+#divCtsMsg{
+	position: absolute;
+	top: 33px;
+	left: 0px;
+	width: 768px;
+	height: 539px;
+	font-size: 14px;
+	color: black;
+	background-color: white;
+	overflow-y: auto;
+	border-radius: 10px;			/*for position check*/
+}

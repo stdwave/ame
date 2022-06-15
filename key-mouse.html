@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" type="image/x-icon" href="fig/favicon.ico">	
+	<title>Key/Mouse</title>
+	<link rel="stylesheet" type="text/css" href="css/man.css" media="all">
+	<script type="text/javascript" src="js/template.js"></script>
+</head>
+<body>
+	<script type="text/javascript">topmenu();</script>
+
+	<h1>Key/Mouse</h1>
+	<p>This application supports some keys for shortcut and mouse operations.
+	This page describes shortcut keys and mouse operations respectively.</p>
+
+	<h2>Shortcut keys</h2>
+	<p>The following table shows shortcut keys supported this application.</p>
+	<table id="tabShortcutKey">
+	<tr><th class="thTdShortkey">Key</th><th class="tdOperation">Operation</th></tr>
+	<tr><td class="thTdShortkey">space</td><td class="tdOperation">Audio play/stop</td></tr>
+	<tr><td class="thTdShortkey">s</td><td class="tdOperation">Set play time to zero(00:00:000).</td></tr>
+	<tr><td class="thTdShortkey">r</td><td class="tdOperation">Enable/disable repeat.</td></tr>
+	<tr><td class="thTdShortkey">b</td><td class="tdOperation">Set play time at start position after stop audio.</td></tr>
+	<tr><td class="thTdShortkey">n</td><td class="tdOperation">Enable/disable navigation.</td></tr>
+	<tr><td class="thTdShortkey">0</td><td class="tdOperation">Change Track window.</td></tr>
+	<tr><td class="thTdShortkey">1</td><td class="tdOperation">Change Mixer window.</td></tr>
+	<tr><td class="thTdShortkey tdLastKM">2</td><td class="tdOperation tdLastKM">Change Effect window.</td></tr>
+	</table>
+	<p>According to the table, the shortcut key "n" is a navigation function which displays the message at a mouse position how to use this application.
+	Enabling the function changes the color of "Navigation" in menu as shown below.</p>
+	<img src="fig/keymouse/menu-nav.png" width="514" height="48" alt="Navgation">
+
+
+	<h2 id="mouseop">Mouse operations</h2>
+	<p>
+	This application supports mouse operations as shown below. 
+	<ul>
+	<li>Click</li>
+	<li>Drag & Drop</li>
+	<li>Click & Key(s)</li>
+	</ul>
+	Mouse operations contain various functions in Transpose, Track, Mixer, and Effect.
+	Then, this page describes the mouse operations for them as shown below.
+	<ul>
+		<li><a href="#transpose">Transpose</a></li>
+		<li><a href="#inspector">Inspector</a></li>
+		<li><a href="#track">Track</a></li>
+		<li><a href="#timeruler">Time ruler</a></li>
+		<li><a href="#tr-menu-lane">Track menu / lane</a></li>
+		<li><a href="#tr-menu-lane-am">Track menu / lane for automation</a></li>
+		<li><a href="#mixer">Mixer</a></li>
+		<li><a href="#effect">Effect</a></li>
+		<li><a href="#eq">EQ</a></li>
+		<li><a href="#comp">Compressor</a></li>
+	</ul>
+	</p>
+
+	<h3 id="transpose">Transpose</h3>
+	<table class="tabMouse">
+		<tr><th>Operation</th><th>Items</th><th>Function</th></tr>
+		<tr><td rowspan="13">Click</td><td><img src="fig/keymouse/tp-btn-spt0.png" width="34" height="28" alt="Set play time to zero."><td>Set play time to zero(00:00:000).</td></tr>
+		<tr><td><img src="fig/keymouse/tp-btn-play.png" width="34" height="28" alt="Play audio."><td>Play audio.</td></tr>
+		<tr><td><img src="fig/keymouse/tp-btn-stop.png" width="36" height="29" alt="Stop audio."><td>Stop audio.</td></tr>
+		<tr><td><img src="fig/keymouse/tp-btn-sst.png" width="34" height="28" alt="Set play time at start autdio after sop audio."><td>Set play time at start audio after stop audio.</td></tr>
+		<tr><td id="tp-rpt"><img src="fig/keymouse/tp-btn-rpt.png" width="34" height="28" alt="Enable/disable repeat."><td>Enable/disable repeat.</td></tr>
+		<tr><td><img src="fig/keymouse/tp-btn-intro.png" width="62" height="25" alt="Set repeat start/end time for Intro."><td>Set repeat start/end time for the song part "Intro."</td></tr>
+		<tr><td><img src="fig/keymouse/tp-btn-a.png" width="41" height="25" alt="Set repeat start/end time for A."></td><td>Set repeat start/end time for the song part "A."</td></tr>
+		<tr><td><img src="fig/keymouse/tp-btn-b.png" width="41" height="25" alt="Set repeat start/end time for B."></td><td>Set repeat start/end time for the song part "B."</td></tr>
+		<tr><td><img src="fig/keymouse/tp-btn-c.png" width="41" height="25" alt="Set repeat start/end time for C."></td><td>Set repeat start/end time for the song part "C."</td></tr>
+		<tr><td><img src="fig/keymouse/tp-btn-outro.png" width="63" height="27" alt="Set repeat start/end time for Outro."></td><td>Set repeat start/end time for the song part "Outro."</td></tr>
+		<tr><td><img src="fig/keymouse/tp-btn-track.png" width="66" height="26" alt="Change Track window."></td><td>Change Track window.</td></tr>
+		<tr><td><img src="fig/keymouse/tp-btn-mixer.png" width="66" height="26" alt="Change Mixer window."></td><td>Change Mixer window.</td></tr>
+		<tr><td><img src="fig/keymouse/tp-btn-effect.png" width="66" height="26" alt="Change Effect window."></td><td>Change Effect window.</td></tr>
+		<tr><td class="tdLastMouse" rowspan="3">Drag & drop</td><td><img src="fig/keymouse/tp-spn-playtime.png" width="167px" height="25px" alt="Change playt time."><td>Change play time.</td></tr>
+		<tr><td><img src="fig/keymouse/tp-spn-rptstarttime.png" width="167px" height="25px" alt="Change repeat start time."><td>Change repeat start time.</td></tr>
+		<tr><td class="tdLastMouse"><img src="fig/keymouse/tp-spn-rptendtime.png" width="167px" height="25px" alt="Change repeat end time."><td class="tdLastMouse">Change repeat end time.</td></tr>
+	</table>
+
+	<p class="p-rtb"><a href="#mouseop">Return to Mouse operations.</a><p>
+
+	<h3 id="inspector">Inspector</h3>
+	<table class="tabMouse">
+		<tr><th>Operation</th><th>Items</th><th>Function</th></tr>
+		<tr><td rowspan="6">Click</td><td><img src="fig/keymouse/insp-btn-center.png" width="61" height="26" alt="Set panning to center."><td>Set panning to center.</td></tr>
+		<tr><td><img src="fig/keymouse/insp-btn-mute.png" width="61" height="26" alt="Enable/disalbe mute."><td>Enable/disable mute.</td></tr>
+		<tr><td><img src="fig/keymouse/insp-btn-solo.png" width="61" height="26" alt="Enable/disalbe solo."><td>Enable/disable solo.</td></tr>
+		<tr><td><img src="fig/keymouse/insp-btn-rec.png" width="62" height="26" alt="Enable/disalbe to record for automation."><td>Enable/disable to record for automation.</td></tr>
+		<tr><td><img src="fig/keymouse/insp-btn-play.png" width="61" height="26" alt="Enable/disalbe to play for automation."><td>Enable/disable to play for automation.</td></tr>
+		<tr><td><img src="fig/keymouse/insp-btn-effect.png" width="61" height="26" alt="Change Effect window."><td>Change Effect window.</td></tr>
+		<tr><td id="insp-pangain" class="tdLastMouse" rowspan="2">Click, Drag & drop</td><td><img src="fig/keymouse/insp-rng-pan.png" width="96" height="36" alt="Change panning."></td><td>Change panning.</td></tr>
+		<tr><td class="tdLastMouse"><img src="fig/keymouse/insp-rng-gain.png" width="59" height="141" alt="Change volume."></td><td class="tdLastMouse">Change volume.</td></tr>
+	</table>
+
+	<p class="p-rtb"><a href="#mouseop">Return to Mouse operations.</a><p>
+
+	<h3 id="track">Track</h3>
+	<table class="tabMouse">
+		<tr><th>Operation</th><th>Items</th><th>Function</th></tr>
+		<tr><td rowspan="18">Click</td><td><img src="fig/keymouse/tr-btn-clrmute.png" width="46" height="26" alt="Disable mute for all audio channel."><td>Disable mute for all audio channel.</td></tr>
+		<tr><td><img src="fig/keymouse/tr-btn-clrsolo.png" width="46" height="26" alt="Disable solo for all audio channel."><td>Disable solo for all audio channel.</td></tr>
+		<tr><td><img src="fig/keymouse/tr-btn-autoscroll.png" width="73" height="26" alt="Scroll time ruler and all track lanes automatically."><td>Scroll "Time ruler" and all "Track lane" automatically.</td></tr>
+		<tr><td><img src="fig/keymouse/tr-btn-reduce.png" width="26" height="26" alt="Reduce horizontal(time)."><td>Reduce horizontal(time).</td></tr>
+		<tr><td><img src="fig/keymouse/tr-btn-enlarge.png" width="26" height="26" alt="Enlarge horizontal(time)."><td>Enlarge horizontal(time).</td></tr>
+	</table>
+
+	<p class="p-rtb"><a href="#mouseop">Return to Mouse operations.</a><p>
+
+	<h3 id="timeruler">Time ruler</h3>
+	<table class="tabMouse">
+		<tr><th>Operation</th><th>Items</th><th>Function</th></tr>
+		<tr><td>Click</td><td><img src="fig/keymouse/tmr-cvs-playline.png" width="213" height="87" alt="Set play line and play time."></td><td>Set a play line(a white vertical line) on track lanes and play time in Transpose.</td></tr>
+		<tr><td>Click + command(Mac)/ctrl(PC)</td><td><img src="fig/keymouse/tmr-cvs-rst.png" width="212" height="39" alt="Set the mark for repeat start time."></td><td>Set the marker and repeat start time in Transpose.</td></tr>
+		<tr><td>Click + alt</td><td><img src="fig/keymouse/tmr-cvs-ret.png" width="212" height="39" alt="Set the mark for repeat end time."></td><td>Set the marker and repeat end time in Transpose.</td></tr>
+	</table>
+
+	<p class="p-rtb"><a href="#mouseop">Return to Mouse operations.</a><p>
+
+	<h3 id="tr-menu-lane">Track menu / lane</h3>
+	<table class="tabMouse">
+		<tr><th>Operation</th><th>Items</th><th>Function</th></tr>
+		<tr><td id="tr-icon" rowspan="10">Click</td><td><img src="fig/keymouse/cmn-img-icon.png" width="58" height="58" alt="Change an audio ch in Inspector."><td rowspan="2">Change an audio channel in Inspector.</td></tr>
+		<tr><td><img src="fig/keymouse/trm-spn-name.png" width="202" height="28px" alt="Change an audio ch in Inspector."></td></tr>
+		<tr><td><img src="fig/keymouse/trm-btn-dispamtr.png" width="34" height="26" alt="Display an automation track."><td>Display an automation track.</td></tr>
+		<tr><td><img src="fig/keymouse/trm-btn-hideamtr.png" width="34" height="26" alt="Hide an automation track."><td>Hide an automation track.</td></tr>
+		<tr><td><img src="fig/keymouse/trm-btn-mute.png" width="34" height="26" alt="Enable/disable mute."><td>Enable/disable mute.</td></tr>
+		<tr><td><img src="fig/keymouse/trm-btn-solo.png" width="34" height="26" alt="Enable/disable solo."><td>Enable/disable solo.</td></tr>
+		<tr><td><img src="fig/keymouse/trm-btn-amrec.png" width="33" height="26" alt="Enable/disable to record for automation."><td>Enable/disable to record for automation.</td></tr>
+		<tr><td><img src="fig/keymouse/trm-btn-amplay.png" width="33" height="26" alt="Enable/disable to play for automation."><td>Enable/disable to play for automation.</td></tr>
+		<tr><td><img src="fig/keymouse/trm-btn-effect.png" width="33" height="26" alt="Change Effect window."><td>Change Effect window.</td></tr>
+		<tr><td><img src="fig/keymouse/trl-cvs-playline.png" width="215" height="103" alt="Change a play line."><td>Change a play line(a white vertical line) and set play time in Inspector.</td></tr>
+		<tr><td class="tdLastMouse">Click + command(Mac)/ctrl(PC)</td><td class="tdLastMouse"><img src="fig/keymouse/trl-cvs-rpt.png" width="146" height="105" alt="Set markers for repeat start/end time."><td class="tdLastMouse">Set the markers in Time ruler and times in Transpose of repeat start/end for an audio duration.</td></tr>
+	</table>
+
+	<p class="p-rtb"><a href="#mouseop">Return to Mouse operations.</a><p>
+
+	<h3 id="tr-menu-lane-am">Track menu / lane for automation</h3>
+	<table class="tabMouse">
+		<tr><th>Operation</th><th>Items</th><th>Function</th></tr>
+		<tr><td rowspan="6">Click<td><img src="fig/keymouse/trmam-btn-enlarge.png" width="26" height="26" alt="Enlarge for vertical."><td>Enlarge an automation track for vertical.</td></tr>
+		<tr><td><img src="fig/keymouse/trmam-btn-reduce.png" width="26" height="26" alt="Reduce for vertical."></td><td>Reduce an automation track for vertical.</td></tr>
+		<tr><td><img src="fig/keymouse/trmam-btn-del.png" width="46" height="21" alt="Change mode to delete an automation datum."></td><td>Enable to delete an automation datum in a track lane.</td></tr>
+		<tr><td><img src="fig/keymouse/trmam-btn-add.png" width="46" height="21" alt="Change mode to add an automation datum."></td><td>Enable to add an automation datum in a track lane.</td></tr>
+		<tr><td><img src="fig/keymouse/trmam-btn-move.png" width="46" height="21" alt="Change mode to move an automation datum."></td><td>Enable to move an automation datum in a track lane.</td></tr>
+		<tr><td><img src="fig/keymouse/trmam-btn-edit.png" width="46" height="21" alt="Change mode to edit an automation datum."></td><td>Enable to edit an automation datum in a track lane.</td></tr>
+		<tr><td>Click or drag & drop</td><td><img src="fig/keymouse/trmam-select-type.png" width="159" height="20" alt="Select automation type."></td><td>Select automation type.</td></tr>
+		<tr><td id="trvw-clkalt">Click + alt</td><td><img src="fig/keymouse/trlam-cvs-del.png" width="299" height="62" alt="Change delete mode."></td><td>Change a mode to delete an automation datum after clicked in a track lane.</td></tr>
+		<tr><td>Click + command(Mac)/ctrl(PC)</td><td><img src="fig/keymouse/trlam-cvs-add.png" width="299" height="62" alt="Change add mode."></td><td>Change a mode to add an automation datum after clicked in a track lane.</td></tr>
+		<tr><td>Click + shift</td><td><img src="fig/keymouse/trlam-cvs-move.png" width="299" height="62" alt="Change move mode."></td><td>Change a mode to move an automation datum after clicked in a track lane.</td></tr>
+		<tr><td>Click + alt + command/ctrl</td><td><img src="fig/keymouse/trlam-cvs-edit.png" width="299" height="62" alt="Change edit mode."></td><td>Change a mode to edit an automation datum after clicked in a track lane.</td></tr>
+		<tr><td>Click + alt + command/ctrl + shift</td><td><img src="fig/keymouse/trlam-cvs-off.png" width="299" height="62" alt="Cancel a mode."></td><td>Cancel a mode.</td></tr>
+		<tr><td rowspan="2">Drag & drop</td><td><img src="fig/keymouse/trmam-spn-time.png" width="260" height="62" alt="Change time with drag & drop."></td><td>Change the time of an automation datum selected in a track lane in "Edit" mode.</td></tr>
+		<tr><td><img src="fig/keymouse/trmam-spn-val.png" width="260" height="62" alt="Change value with drag & drop."><td>Change the value of an automation datum selected in a track in "Edit" mode.</td></tr>
+	</table>
+
+	<p class="p-rtb"><a href="#mouseop">Return to Mouse operations.</a><p>
+
+	<h3 id="mixer">Mixer</h3>
+	<table class="tabMouse">
+		<tr><th>Operation</th><th>Items</th><th>Function</th></tr>
+		<tr><td rowspan="15">Click</td><td><img src="fig/keymouse/mixer-btn-auto.png" width="66" height="25" alt="Display icons automatically."><td>Display icons in Position Mixer at play time automatically.</td></tr>
+		<tr><td><img src="fig/keymouse/mixer-btn-rhythm.png" width="66" height="25" alt="Display icons for Rhythm."><td>Display icons in Position Mixer for "Rhythm."</td></tr>
+		<tr><td><img src="fig/keymouse/mixer-btn-allon.png" width="41" height="25" alt="Display all icons."><td>Display in Position Mixer all icons.</td></tr>
+		<tr><td><img src="fig/keymouse/mixer-btn-alloff.png" width="41" height="25" alt="Hide all icons."><td>Hide all icons.</td></tr>
+		<tr><td><img src="fig/keymouse/mixer-btn-a.png" width="34" height="25" alt="Display icons for part A."><td>Display icons in Position Mixer for the song part "A."</td></tr>
+		<tr><td><img src="fig/keymouse/mixer-btn-b.png" width="34" height="25" alt="Display icons for part B."><td>Display icons in Position Mixer for the song part "B."</td></tr>
+		<tr><td><img src="fig/keymouse/mixer-btn-c.png" width="34" height="25" alt="Display icons for part C."><td>Display icons in Position Mixer for the song part "C,"</td></tr>
+		<tr><td><img src="fig/keymouse/mixer-cb-icnselct.png" width="89" height="19" alt="Display/hide an icon."></td><td>Display / hide an icon in Position Mixer.</td></tr>
+		<tr><td><img src="fig/keymouse/cmn-btn-center.png" width="46" height="24" alt="Set panning to center."></td><td>Set panning to center.</td></tr>
+		<tr><td><img src="fig/keymouse/cmn-btn-mute.png" width="46" height="24" alt="Enable/disalbe mute."></td><td>Enable/disable mute.</td></tr>
+		<tr><td><img src="fig/keymouse/cmn-btn-solo.png" width="46" height="24" alt="Enable/disable solo."></td><td>Enable/disable solo.</td></tr>
+		<tr><td><img src="fig/keymouse/cmn-btn-amrec.png" width="46" height="24" alt="Enable/disable to recored for automation."></td><td>Enable/disable to record for automation.</td></tr>
+		<tr><td><img src="fig/keymouse/cmn-btn-amplay.png" width="46" height="24" alt="Enalbe/disable to play for automation."></td><td>Enable/disable to play for automation.</td></tr>
+		<tr><td><img src="fig/keymouse/cmn-btn-effect.png" width="46" height="24" alt="Change Effect window."></td><td>Change Effect window.</td></tr>
+		<tr><td><img src="fig/keymouse/cmn-img-icon.png" width="58" height="58" alt="Display an icon and select the corresponding check-box."></td><td>Display an icon in "Icon position" and select the corresponding check-box in "ICON SELECT."</td></tr>
+		<tr><td id="mixer-pangain" rowspan="2">Click, Drag & drop</td><td><img src="fig/keymouse/cmn-rng-pan.png" width="87" height="15" alt="Change panning."></td><td>Change panning.</td></tr>
+		<tr><td><img src="fig/keymouse/cmn-rng-gain.png" width="22" height="125" alt="Change volume."></td><td>Change volume.</td></tr>
+		<tr><td id="mixer-posmix" class="tdLastMouse" rowspan="2">Drag & drop</td><td class="tdLastMouse"><img src="fig/keymouse/mixer-cvs-posmix.png" width="245" height="128" alt="Change pan & volume with drag & drop."></td><td class="tdLastMouse">Change panning(vertical) and volume(horizontal).</td></tr>
+	</table>
+
+	<p class="p-rtb"><a href="#mouseop">Return to Mouse operations.</a><p>
+
+	<h3 id="effect">Effect</h3>
+	<table class="tabMouse">
+		<tr><th>Operation</th><th>Items</th><th>Function</th></tr>
+		<tr><td >Click or drag & drop</td><td><img src="fig/keymouse/fx-select-current.png" width="128" height="24" alt="Select current channel."></td><td>Select part/output ch. to operate EQ & compressor.</td></tr>
+		<tr><td rowspan="9">Click</td><td><img src="fig/keymouse/cmn-btn-center.png" width="46" height="24" alt="Set panning to center."></td><td>Set panning to center.</td></tr>
+		<tr><td><img src="fig/keymouse/cmn-btn-mute.png" width="46" height="24" alt="Enable/disable mute."><td>Enable/disable mute.</td></tr>
+		<tr><td><img src="fig/keymouse/cmn-btn-solo.png" width="46" height="24" alt="Enable/disable solo."><td>Enable/disable solo.</td></tr>
+		<tr><td><img src="fig/keymouse/cmn-btn-amrec.png" width="46" height="24" alt="Enable/disable to record for automation."><td>Enable/disable to record for automation.</td></tr>
+		<tr><td><img src="fig/keymouse/cmn-btn-amplay.png" width="46" height="24" alt="Enable/disable to play for automation."><td>Enable/disable to play for automation.</td></tr>
+		<tr><td><img src="fig/keymouse/cmn-btn-effect.png" width="46" height="24" alt="Change Effect window."><td>Change Effect window.</td></tr>
+		<tr><td><img src="fig/keymouse/fx-btn-prevch.png" width="26" height="26" alt="Set a new current channel after clicked the previous marker."><td>Set a previous ch. as current ch. to operate EQ & compressor.</td></tr>
+		<tr><td><img src="fig/keymouse/fx-btn-nextch.png" width="25" height="26" alt="Set a new current channel after clicked the next marker."><td>Set a next ch. as current ch. to operate EQ & compressor.</td></tr>
+		<tr><td><img src="fig/keymouse/cmn-img-icon.png" width="58" height="58" alt="Set a new current channel after clicked an icon."></td><td>Set previous/next ch. as current ch.</td></tr>
+		<tr><td id="fx-pangain" rowspan="2">Click, Drag & drop</td><td><img src="fig/keymouse/cmn-rng-pan.png" width="87" height="15" alt="Change panning."></td><td>Change panning.</td></tr>
+		<tr><td><img src="fig/keymouse/cmn-rng-gain.png" width="22" height="125" alt="Change volume."></td><td>Change volume.</td></tr>
+	</table>
+
+	<p class="p-rtb"><a href="#mouseop">Return to Mouse operations.</a><p>
+
+	<h3 id="eq">EQ</h3>
+	<table class="tabMouse">
+		<tr><th>Operation</th><th>Items</th><th>Function</th></tr>
+		<tr><td id="eq-sw" rowspan="2">Click</td><td><img src="fig/keymouse/fx-btn-sw.png" width="36" height="36" alt="Enable/disable EQ."></td><td>Enable/disable EQ.</td></tr>
+		<tr><td id="eq-filtno"><img src="fig/keymouse/eq-cb-filtno.png" width="120" height="40" alt="Enable/disable a filter effect."></td><td>Enable/disable a filter effect and display/hide a filter curve & marker in EQ spectrum. Also, set the filter parameters:frequency, Q, and gain to input-boxes when checked.</td></tr>
+		<tr><td>Click or drag & drop</td><td id="eq-filttype"><img src="fig/keymouse/eq-select-filttype.png" width="89" height="38" alt="Select a filter type."><td>Select a filter type.</td></tr>
+		<tr><td id="eq-freq" rowspan="3">Drag & drop</td><td><img src="fig/keymouse/eq-spn-freq.png" width="80" height="47" alt="Change frequency."></td><td>Change frequency.</td></tr>
+		<tr><td id="eq-q"><img src="fig/keymouse/eq-spn-q.png" width="42" height="45" alt="Change Q."></td><td>Change Q.</td></tr>
+		<tr><td id="eq-gain"><img src="fig/keymouse/eq-spn-gain.png" width="56px" height="44" alt="Change gain."></td><td>Change gain.</td></tr>
+		<tr><td id="eq-mark">Click, drag & drop</td><td><img src="fig/keymouse/eq-spn-markers.png" width="256" height="128" alt="Click:set filter parameters to input-boxes. Drag & drop:change a filter curver and marker position."></td><td>Click:set the filter parameters corresponding a clicked marker. <br>Drag & drop:change a filter curve and maker position and update the frequency & gain to the input-boxes automatically.</td></tr>
+	</table>
+
+	<p class="p-rtb"><a href="#mouseop">Return to Mouse operations.</a><p>
+
+	<h3 id="comp">Compressor</h3>
+	<table class="tabMouse">
+		<tr><th>Operation</th><th>Items</th><th>Function</th></tr>
+		<tr><td id="comp-sw" rowspan="2">Click</td><td><img src="fig/keymouse/fx-btn-sw.png" width="36" height="36" alt="Enable/disable compressor."></td><td>Enable/disable compressor.</td></tr>
+		<tr><td id="comp-ratio"><img src="fig/keymouse/comp-cb-ratio.png" width="105" height="82" alt="Change ratio."></td><td>Change ratio.</td></tr>
+		<tr><td id="comp-threshold" rowspan="4">Drag & drop </td><td><img src="fig/keymouse/comp-spn-threshold.png" width="112" height="29" alt="Change threshold."></td><td>Change threshold.</td></tr>
+		<tr><td id="comp-knee"><img src="fig/keymouse/comp-spn-knee.png" width="105" height="28" alt="Change knee."></td><td>Change knee.</td></tr>
+		<tr><td id="comp-attack"><img src="fig/keymouse/comp-spn-attack.png" width="107" height="27" alt="Change attack."></td><td>Change attack.</td></tr>
+		<tr><td id="comp-release"><img src="fig/keymouse/comp-spn-release.png" width="106" height="28" alt="Change release."></td><td>Change release.</td></tr>
+		<tr><td id="comp-mark" class="tdLastMouse">Drag & drop</td><td class="tdLastMouse"><img src="fig/keymouse/comp-spn-marker.png" width="162" height="160" alt="Change a curve and marker and update threshold."></td><td class="tdLastMouse">Change a curve and marker position and update threshold to the input-box automatically.</td></tr>
+	</table>
+
+	<p class="p-rtb"><a href="#mouseop">Return to Mouse operations.</a><p>
+
+	<script type="text/javascript">console.log('hoge');footer();</script>
+</body>
+</html>

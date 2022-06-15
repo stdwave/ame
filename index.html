@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" type="image/x-icon" href="fig/favicon.ico">	
+	<title>Demo - Audio Mixing Experience with Web Audio API</title>
+	<meta name="description" content="html5,webaudioapi,javascript"/>
+	<link rel="stylesheet" type="text/css" href="css/ame.css" media="all">
+	<link id="lnkAmeCSS" rel="stylesheet" type="text/css" media="all">
+	<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+	<script src="js/draggabilly.pkgd.min.js"></script>
+	<script src="js/pre-ame.js"></script>
+</head>
+<body>
+	<div id="loading">
+		<div id="divTitle">
+			<span id="spnTitle">Audio mixing experience with Web Audio API</span>
+		</div>
+		<div id="divChkBrowsOS">
+			<span id="spnNoSprtBrowsOsMsg" class="spnChkBrowsOS">Sorry, this demo site doesn't support your browser or operating system.</span>
+			<span id="spnSprtBrowsOsMsg"   class="spnChkBrowsOS">Please use <font color="blue">three browsers</font> in <font color="blue">two operating systems</font> as follow:</span> 
+		</div>
+		<div id="divSprtBrows">
+			<span id="spnFirefox" class="spnSptBrows">Firefox(Mac / Windows),</span>
+			<span id="spnChrome"  class="spnSptBrows">Chrome(Mac / Windows),</span>
+			<span id="spnSafari"  class="spnSptBrows">Safari(Mac).</span>
+		</div>
+		<div id="divLoadSeq">
+			<img id="imgLoading" src="fig/25.gif">
+			<span id="spnLoading">Loading...</span>
+			<progress id="progLoading" value="0" max="1"></progress>
+			<span id="spnPercLoading">0%</span>
+		</div>
+		<div id="divStart">
+			<span id="spnStart">Please click this windows to start.</span>
+		</div>
+	</div>
+	<div id="transpose">
+		<div id=divPlayedTime>
+			<canvas id="cvsPlayMrk" width="15" height="15"></canvas> 
+			<span id="spnMin"    class="spnPlayedTime">00</span>
+			<span id="spnSegMS"  class="spnPlayedTime">:</span>
+			<span id="spnSec"    class="spnPlayedTime">00</span>
+			<span id="spnSegSms" class="spnPlayedTime">:</span>
+			<span id="spnMsec"   class="spnPlayedTime">000</span>
+			<canvas id="cvsMin"  class="cvsPlayedTime"></canvas>
+			<canvas id="cvsSec"  class="cvsPlayedTime"></canvas>
+			<canvas id="cvsMsec" class="cvsPlayedTime"></canvas>
+		</div>
+		<div id=divPlayBack>
+			<canvas id="cvsPbZero"   class="cvsPlayBack" width="28" height="20"></canvas> 
+			<canvas id="cvsPbPlay"   class="cvsPlayBack" width="28" height="20"></canvas> 
+			<canvas id="cvsPbStop"   class="cvsPlayBack" width="28" height="20"></canvas> 
+			<canvas id="cvsPbReturn" class="cvsPlayBack" width="28" height="20"></canvas> 
+			<canvas id="cvsPbRepeat" class="cvsPlayBack" width="28" height="20"></canvas> 
+		</div>
+		<div id="divRptStartTime">
+			<canvas id="cvsRptStartMark" width="15" height="15"></canvas>
+			<span id="spnRptStartMin"    class="spnRptStartTime">00</span>
+			<span id="spnRptStartSegMS"  class="spnRptStartTime">:</span>
+			<span id="spnRptStartSec"    class="spnRptStartTime">00</span>
+			<span id="spnRptStartSegSms" class="spnRptStartTime">:</span>
+			<span id="spnRptStartMsec"   class="spnRptStartTime">000</span>
+			<canvas id="cvsRptStartMin"  class="cvsRptStartTime"></canvas>
+			<canvas id="cvsRptStartSec"  class="cvsRptStartTime"></canvas>
+			<canvas id="cvsRptStartMsec" class="cvsRptStartTime"></canvas>
+		</div>
+		<div id="divRptEndTime">
+			<canvas id="cvsRptEndMark" width="15" height="15"></canvas>
+			<span id="spnRptEndMin"    class="spnRptEndTime">00</span>
+			<span id="spnRptEndSegMS"  class="spnRptEndTime">:</span>
+			<span id="spnRptEndSec"    class="spnRptEndTime">00</span>
+			<span id="spnRptEndSegSms" class="spnRptEndTime">:</span>
+			<span id="spnRptEndMsec"   class="spnRptEndTime">000</span>
+			<canvas id="cvsRptEndMin"  class="cvsRptEndTime"></canvas>
+			<canvas id="cvsRptEndSec"  class="cvsRptEndTime"></canvas>
+			<canvas id="cvsRptEndMsec" class="cvsRptEndTime"></canvas>
+		</div>
+		<div id="divDirctRptArea">
+			<button id="btnIntro" class="btnRptTp">Intro</button>
+			<button id="btnA"     class="btnRptTp">A</button>
+			<button id="btnB"     class="btnRptTp">B</button>
+			<button id="btnC"     class="btnRptTp">C</button>
+			<button id="btnOutro" class="btnRptTp">Outro</button>
+		</div>
+		<div id="divDispMode">
+			<span id="spnDispMode">Window Select</span>
+			<button id="btnTrDispMode"  class="btnDispMode">Track</button>
+			<button id="btnMixDispMode" class="btnDispMode">Mixer</button>
+			<button id="btnFxDispMode"  class="btnDispMode">Effect</button>
+		</div>
+	</div>
+	<div id="track">
+		<div id="divInspector">
+			<input id="rngPanInspct"  type=range min="-1.57" max="1.57" value="0" step="0.01" />
+			<input id="rngGainInspct" type=range min="0" max="1" value="1" step="0.01" />
+			<button id="btnCenterInspct" class="btnInspct">Center</button>
+			<button id="btnMuteInspct"   class="btnInspct">Mute</button>
+			<button id="btnSoloInspct"   class="btnInspct">Solo</button>
+			<button id="btnRecAmInspct"  class="btnInspct">Rec</button>
+			<button id="btnPlayAmInspct" class="btnInspct">Play</button>
+			<button id="btnFxInspct"     class="btnInspct">effect</button>
+			<img id="imgIcnInspct" alt="No image">
+			<span id="spnPanTagInspct"  class="spnTagInspct">Pan</span>
+			<span id="spnLTagInspct"    class="spnTagInspct">L</span>
+			<span id="spnRTagInspct"    class="spnTagInspct">R</span>
+			<span id="spnGainTagInspct" class="spnTagInspct">Volume</span>
+			<span id="spnMaxTagInspct"  class="spnTagInspct">Max</span>
+			<span id="spnMinTagInspct"  class="spnTagInspct">Min</span>
+			<span id="spnAmTagInspct"   class="spnTagInspct">Automation</span>
+			<span id="spnFxTagInspct"   class="spnTagInspct">Effect</span>
+			<span id="spnTrTagInspct"   class="spnTagInspct">Tr.Name</span>
+		</div>
+		<div id="divTimeRuler">
+			<table id="tabTimeRuler"></table>
+		</div>
+		<div id="divTrCh">
+			<table id="tabTrCh"></table>
+		</div>
+		<div id="divTrView">
+			<table id="tabTrView"></table>
+			<canvas id="cvsPlayLine"></canvas>
+		</div>
+		<div id="divTrScrollX">
+			<canvas id="cvsTrScrollX" width="50" height="10"></canvas>
+		</div>
+		<div id="divTrScrollY">
+			<canvas id="cvsTrScrollY" width="10" height="50"></canvas>
+		</div>
+		<div id="divAllPartChMuteSoloState">
+			<button id="btnAllPartChMuteState">Mute</button>
+			<button id="btnAllPartChSoloState">Solo</button>
+		</div>
+		<div id="divZoomX">
+			<input id= "btnAutoScrollX" type="button" value="auto scroll" />
+			<input id= "btnMagX" type="button" value="+" />
+			<input id= "btnRedX" type="button" value="-" />
+		</div>
+	</div>
+	<div id="mixer">
+		<div id="divIconSelect">
+			<span id="spnIcnSelctTag"    class="spnIcnSlctTag">ICON SELECT</span>
+			<span id="spnAllOnOffIcnTag" class="spnIcnSlctTag">All</span>
+			<span id="spnPartIcnTag"     class="spnIcnSlctTag">Part</span>
+			<button id="btnIcnSelct0" class="btnIcnSelct" name="auto">Auto</button>
+			<button id="btnIcnSelct1" class="btnIcnSelct" name="rythm">Rhythm</button>
+			<button id="btnIcnSelct2" class="btnIcnSelct" name="allOn">On</button>
+			<button id="btnIcnSelct3" class="btnIcnSelct" name="allOff">Off</button>
+			<button id="btnIcnSelct4" class="btnIcnSelct" name="partA">A</button>
+			<button id="btnIcnSelct5" class="btnIcnSelct" name="partB">B</button>
+			<button id="btnIcnSelct6" class="btnIcnSelct" name="partC">C</button>
+		</div>
+		<div id="divPosMix">
+			<canvas id="cvsPosMixArea"  width="472" height="216"></canvas>
+			<canvas id="cvsPosMixGraph" width="512" height="256"></canvas>
+		</div>
+		<div id="partCh">
+			<table id="tabConsole">
+				<tr id="trConsole"></tr>
+			</table>
+		</div>
+		<div id="outputCh">
+			<input id="outputPan" type=range min="-1.57" max="1.57" value="0" step="0.01" />
+			<input id="outputGain" type=range min="0" max="1" value="1" step="0.01" />
+			<button id="btnOutputPanC"   class="btnOutput">C</button>
+			<button id="btnOutputMute"   class="btnOutput">M</button>
+			<button id="btnOutputEffect" class="btnOutput">e</button>
+			<img id="outputIcon" alt="No image">
+			<span id="outputTag">OUTPUT</span>
+		</div>
+	</div>
+	<div id="FX">
+		<div id="divFxPartCh">
+			<select id="selectFxCh"></select>
+			<span id="spnPrevCh"    class="spnCh">-----</span>
+			<span id="spnNextCh"    class="spnCh">-----</span>
+			<span id="spnSelectCh"  class="spnChTag">Ch. SELECT</span>
+			<span id="spnCurrChTag" class="spnChTag">CURRENET</span>
+			<span id="spnPrevChTag" class="spnChTag">PREVIOUS</span>
+			<span id="spnNextChTag" class="spnChTag">NEXT</span>
+			<canvas id="cvsPrevCh"  class="cvsCh" width="20" height="20"></canvas>
+			<canvas id="cvsNextCh"  class="cvsCh" width="20" height="20"></canvas>
+			<img id="imgPrevCh" class="imgCh" width="50" height="50" alt="no image">
+			<img id="imgCurrCh" class="imgCh" width="50" height="50" alt="no image">
+			<img id="imgNextCh" class="imgCh" width="50" height="50" alt="no image">
+			<button id="btnCenterFX" class="btnFX">C</button>
+			<button id="btnMuteFX"   class="btnFX">M</button>
+			<button id="btnSoloFX"   class="btnFX">S</button>
+			<button id="btnRecAmFX"  class="btnFX">R</button>
+			<button id="btnPlayAmFX" class="btnFX">P</button>
+			<input id="rngPanFX"  type=range min="-1.57" max="1.57" value="0" step="0.01" />
+			<input id="rngGainFX" type=range min="0" max="1" value="1" step="0.01" />
+		</div>
+		<div id="divDialog">
+			<canvas id="cvsRtSwFig" width="232", height="256"></canvas>
+			<canvas id="cvsRouting" width="232", height="256"></canvas>
+			<span id="spnFxRtTag">FX Diagram</span>
+			<span id="spnEqRtTag"   class="spnFxTag">[EQ - Filters]</span>
+			<span id="spnCompRtTag" class="spnFxTag">[Compressor]</span>
+			<span id="spnInRtTag"   class="spnRtTag">IN</span>
+			<span id="spnOutRtTag"  class="spnRtTag">OUT</span>
+			<span id="spnRtFilter0" class="spnRtItem">1</span>
+			<span id="spnRtFilter1" class="spnRtItem">2</span>
+			<span id="spnRtFilter2" class="spnRtItem">3</span>
+			<span id="spnRtFilter3" class="spnRtItem">4</span>
+			<canvas id="cvsFilterFig0" class="cvsFig" width="20" height="20"></canvas>
+			<canvas id="cvsFilterFig1" class="cvsFig" width="20" height="20"></canvas>
+			<canvas id="cvsFilterFig2" class="cvsFig" width="20" height="20"></canvas>
+			<canvas id="cvsFilterFig3" class="cvsFig" width="20" height="20"></canvas>
+			<canvas id="cvsCompFig" width="20" height="20"></canvas>
+		</div>
+		<div id="EQ">
+			<div id="divEqParam">
+				<canvas id=cvsEqSW width="30" height="30"></canvas>
+				<span id="spnEqName">- 4 Band EQ</span>
+				<span id="spnTagEqNo">Filter No.</span>
+				<input type="checkbox" id="chkEq0" class="chkEq" name="EQ" value="EQ1" /><label for="chkEq0" id="lblEqNo0" class="lblEqNo">1</label>
+				<input type="checkbox" id="chkEq1" class="chkEq" name="EQ" value="EQ2" /><label for="chkEq1" id="lblEqNo1" class="lblEqNo">2</label>
+				<input type="checkbox" id="chkEq2" class="chkEq" name="EQ" value="EQ3" /><label for="chkEq2" id="lblEqNo2" class="lblEqNo">3</label>
+				<input type="checkbox" id="chkEq3" class="chkEq" name="EQ" value="EQ4" /><label for="chkEq3" id="lblEqNo3" class="lblEqNo">4</label>
+				<span id="spnTagEqType">Filter Type</span>
+				<select id="filterType"><option value="3">LowShelf</option><option value="4">HighShelf</option><option value="5">Peaking</option></select>
+				<span id="spnTagEqFreq"  class="spnTagEq">frequency[Hz]</span>
+				<span id="spnTagEqQ"     class="spnTagEq">Q</span>
+				<span id="spnTagEqGain"  class="spnTagEq">Gain[dB]</span>
+				<span id="spnEqFreq"     class="spnValEq">1000</span>
+				<span id="spnEqQ"        class="spnValEq">0.1</span>
+				<span id="spnEqGain"     class="spnValEq">0.0</span>
+				<canvas id="cvsDragFreq" class="draggabilly cvsEq"></canvas>
+				<canvas id="cvsDragQ"    class="draggabilly cvsEq"></canvas>
+				<canvas id="cvsDragGain" class="draggabilly cvsEq"></canvas>
+			</div>
+			<div id="divGraph">
+				<canvas id='markerArea' width="479" height="238"></canvas>
+				<canvas id="semiLogEq" draggalble="false" width="512" height="256"></canvas>
+				<canvas id="eqSpectrum" width="467" height="226" ></canvas>
+				<canvas id="eqCurve0" class="eqCurve" width="467" height="226" style="z-index:3;"></canvas>
+				<canvas id="eqCurve1" class="eqCurve" width="467" height="226" style="z-index:4;"></canvas>
+				<canvas id="eqCurve2" class="eqCurve" width="467" height="226" style="z-index:5;"></canvas>
+				<canvas id="eqCurve3" class="eqCurve" width="467" height="226" style="z-index:6;"></canvas>
+				<span id="eqMarker0" class="draggabilly eq"></span>
+				<span id="eqMarker1" class="draggabilly eq"></span>
+				<span id="eqMarker2" class="draggabilly eq"></span>
+				<span id="eqMarker3" class="draggabilly eq"></span>
+			</div>
+		</div>
+		<div id="comp">
+			<div id="divCompParam">
+				<canvas id=cvsCompSW width="30" height="30"></canvas>
+				<span id="spnCompName">- Compressor</span>
+				<span id="spnThreshold" class="compParam">-30</span>
+				<span id="spnKnee"      class="compParam">20.0</span>
+				<input type="radio" name="Ratio" value="1" id="radioRatio0" class="radioRatio"><label for="radioRatio0" id="lblValRatio0" class="lblValRatio">1:1</label>
+				<input type="radio" name="Ratio" value="2" id="radioRatio1" class="radioRatio"><label for="radioRatio1" id="lblValRatio1" class="lblValRatio">1:2</label>
+				<input type="radio" name="Ratio" value="4" id="radioRatio2" class="radioRatio"><label for="radioRatio2" id="lblValRatio2" class="lblValRatio">1:4</label>
+				<input type="radio" name="Ratio" value="8" id="radioRatio3" class="radioRatio"><label for="radioRatio3" id="lblValRatio3" class="lblValRatio">1:8</label>
+				<span id="spnAttack"    class="compParam">0.003</span>
+				<span id="spnRelease"   class="compParam">0.25</span>
+				<span id="spnReduction" class="compParam">-</span>
+				<span id="spnThresholdTag" class="compParamTag">Threshold</span>
+				<span id="spnKneeTag"      class="compParamTag">Knee</span>
+				<span id="spnRatioTag"     class="compParamTag">Raito</span>
+				<span id="spnAttackTag"    class="compParamTag">Attack</span>
+				<span id="spnReleaseTag"   class="compParamTag">Release</span>
+				<span id="spnReductionTag" class="compParamTag">Reduction</span>
+				<canvas id="cvsThreshold" class="compCvs"></canvas>
+				<canvas id="cvsKnee"      class="compCvs"></canvas>
+				<canvas id="cvsAttack"    class="compCvs"></canvas>
+				<canvas id="cvsRelease"   class="compCvs"></canvas>
+			</div>
+			<div id="divCompGraph">
+				<canvas id="cvsThresholdMrkArea" width="227" height="228"></canvas>
+				<canvas id="cvsCompGraph" width="256" height="256"></canvas>
+				<canvas id="cvsCompCurve" width="216" height="216"></canvas>
+				<span id="thresholdMarker" class="draggabilly comp th"></span>
+			</div>
+			<div id="divCompReduction">
+				<canvas id="cvsCompReductGraph" width="24" height="256"></canvas>
+				<canvas id="cvsCompReduction" width="12" height="216"></canvas>
+			</div>
+		</div>
+	</div>
+	<div id="menu">
+		<ul id="ulMenu">
+		<li class="liMenu"><a href="intro.html" target="ame_menu">Introduction</a></li>
+		<li class="liMenu"><a href="key-mouse.html" target="ame_menu">Key / Mouse</a></li>
+		<li class="liMenu"><a href="automation.html" target="ame_menu">Automation</a></li>
+		<li class="liMenu" id="liSafari"><a href="about-safari.html" target="ame_menu">About Safari</a></li>
+		<li class="liMenu"><a href="demosong.html" target="ame_menu">Demo song</a></li>
+		<li class="liMenu" id="liNavi">Navigation</li>
+		</ul>
+		<span id="spnCpyRight">&copy Y.Okubo All Rights Reserved.</span>
+		<span id="spnQnaviMsg">Please click the menu "<font color="blue">Navigation</font>" or press key "<font color="blue">n</font>" if you need this function or not.</span>
+	</div>
+	<div id="msg"></div>
+	<script src="js/post-ame.js"></script>
+</body>
+</html>

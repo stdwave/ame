@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" type="image/x-icon" href="fig/favicon.ico">	
+	<title>About Safari</title>
+	<link rel="stylesheet" type="text/css" href="css/man.css" media="all">
+	<script type="text/javascript" src="js/template.js"></script>
+</head>
+<body>
+	<script type="text/javascript">topmenu();</script>
+
+
+	<h1>About Safari</h1>
+	<p>This application using Safari in Mac OS X sounds high-frequency reduced under my condition.
+	Then, this application sets the parameters of EQ and compressor for "OUTPUT" channel automatically
+	in the case of detecting Safari. 
+	If this application may sound high-frequency noisy under your condition, please disable EQ and compressor 
+	or modify the parameter of EQ and compressor for "OUTPUT" channel manually.</p>
+
+
+	<h2>How to disable the parameters of EQ and compressor for "OUTPUT" channel.</h2>
+
+	<p>1. Click the button "Effect" in Transpose as shown in figure below.</p>
+	<img src="fig/about-safari/transpose.png" width="769px" height="58px">
+
+	<p>2. Select "CURRENT" channel to "OUTPUT" as shown in figure below.</p>
+	<img src="fig/about-safari/output-ch.png" width="776px" height="510px">
+
+	<p>3. See the green buttons which look like "power button" as shown in figure below. 
+	The color means EQ or compressor for a channel are enable respectively.</p>
+	<img src="fig/about-safari/eqcomp-param.png" width="768px" height="512px">
+
+	<p>4. Click the button to disalbe EQ as shown in figure below.</p>
+	<img src="fig/about-safari/eq-sw.png" width="639px" height="251px">
+
+	<p>5. Simirally, click the button to disable compressor as shown in figure below.</p>
+	<img src="fig/about-safari/comp-sw.png" width="408px" height="251px">
+
+	<p>6. Finally, see each button colored gray as shown in figure below. 
+	The color means EQ and compressor are disable respectively.</p>
+	<img src="fig/about-safari/disable-eqcomp.png" width="640px" height="512px">
+
+
+	<h2>How to modify the parameters of EQ and compressor for "OUTPUT" channel.</h2>
+
+	<p>This application changes the parameters of EQ and compressor with mouse operations:"click" and "drag & drop."
+	Also, it has a navigation function which displays the message at a mouse position to use this application.
+	If you want to use the function, please click "Navigation" from menu as shown in figure below or press key "n."</p>
+	<img src="fig/about-safari/nav-menu.png" width="514px" height="46px">
+
+
+	<h3>"Click" operations</h3>
+	<p>This application supports "click" operations for EQ and compressor as shown in table below.
+	According to the table, clicking each parameter displays the corresponding content in "Key/Mouse" page.</p>
+	<table class="tabAboutSafari">
+		<tr><th>Parameter</th><th>Type</th><th>Effect</th></tr>
+		<tr><td><a href="key-mouse.html#eq-filtno">Filter No.1, 2, 3, and 4</a></td><td>Check box</td><td rowspan="2">EQ</td></tr>
+		<tr><td><a href="key-mouse.html#eq-filttype">Filter Type</a></td><td>Select</td></tr>
+		<tr><td class="tdLastAS"><a href="key-mouse.html#comp-ratio">Ratio</a></td><td class="tdLastAS">Radio button</td><td class="tdLastAS">compressor</td></tr>
+	</table>
+
+	<br>
+
+	<h3>"Drag & drop" operations</h3>
+	<p>This application supports "drag & drop" operations for EQ and compressor as shown in table below.
+	According to the table, clicking each parameter displays the corresponding content in "Key/Mouse" page.</p>
+	<table class="tabAboutSafari">
+		<tr><th>Parameter</th><th>Type / location</th><th>Effect</th></tr>
+		<tr><td><a href="key-mouse.html#eq-freq">frequency[Hz]</a></td><td>Input box</td><td rowspan="4">EQ</td></tr>
+		<tr><td><a href="key-mouse.html#eq-q">Q</a></td><td>Input box</td></tr>
+		<tr><td><a href="key-mouse.html#eq-gain">Gain</a></td><td>Input box</td></tr>
+		<tr><td><a href="key-mouse.html#eq-mark">Markers</a></td><td>Spectrum</td></tr>
+		<tr><td><a href="key-mouse.html#comp-threshold">Threshold</a></td><td>Input box</td><td rowspan="5" class="tdLastAS">compressor</td></tr>
+		<tr><td><a href="key-mouse.html#comp-knee">Knee</a></td><td>Input box</td></tr>
+		<tr><td><a href="key-mouse.html#comp-attack">Attack</a></td><td>Input box</td></tr>
+		<tr><td><a href="key-mouse.html#comp-release">Release</a></td><td>Input box</td></tr>
+		<tr><td class="tdLastAS"><a href="key-mouse.html#comp-mark">Marker</a></td><td class="tdLastAS">Graph</td></tr>
+	</table>
+
+	<script type="text/javascript">footer();</script>
+</body>
+</html>
